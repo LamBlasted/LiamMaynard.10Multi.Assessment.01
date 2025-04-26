@@ -7,7 +7,7 @@
 [ext_resource type="Script" uid="uid://btayqp5copmp6" path="res://player/scripts/states/state_run.gd" id="5_qjkh3"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_rkbax"]
-radius = 6.96066
+radius = 6.74778
 
 [sub_resource type="Animation" id="Animation_rkbax"]
 length = 0.001
@@ -138,16 +138,19 @@ _data = {
 }
 
 [node name="Player" type="CharacterBody2D"]
+collision_mask = 16
+motion_mode = 1
+wall_min_slide_angle = 0.174533
 script = ExtResource("1_rkbax")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-position = Vector2(-0.00524516, -16.7645)
+position = Vector2(-0.00524516, -14.8727)
 texture = ExtResource("2_rkbax")
 hframes = 19
 vframes = 3
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(0, -0.101524)
+position = Vector2(0, -1.3177)
 shape = SubResource("CircleShape2D_rkbax")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
