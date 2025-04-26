@@ -37,7 +37,7 @@ func SetDirection() -> bool:
 	
 	cardinal_direction = new_dir
 	DirectionChanged.emit( new_dir )
-	sprite.scale.x = -1 if cardinal_direction == Vector2.LEFT else 1 
+	sprite.scale.x = 1 if cardinal_direction == Vector2.LEFT else -1 
 	return true 
 
 func UpdateAnimation( state : String ) -> void:

@@ -1,8 +1,10 @@
-[gd_scene load_steps=13 format=3 uid="uid://csqtruncs401c"]
+[gd_scene load_steps=15 format=3 uid="uid://csqtruncs401c"]
 
 [ext_resource type="Script" uid="uid://bafkf7hq45dkq" path="res://player/scripts/player.gd" id="1_rkbax"]
 [ext_resource type="Texture2D" uid="uid://chxko4fm3h2br" path="res://player/sprites/01Sprite_sheet.png" id="2_rkbax"]
 [ext_resource type="Script" uid="uid://vk65qxvuknl0" path="res://player/scripts/states/player_state_machine.gd" id="3_g1dw6"]
+[ext_resource type="Script" uid="uid://blro5rdhclucp" path="res://player/scripts/states/state_idle.gd" id="4_yw30f"]
+[ext_resource type="Script" uid="uid://btayqp5copmp6" path="res://player/scripts/states/state_run.gd" id="5_qjkh3"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_rkbax"]
 radius = 6.96066
@@ -156,3 +158,11 @@ libraries = {
 [node name="PlayerStateMachine" type="Node" parent="."]
 script = ExtResource("3_g1dw6")
 metadata/_custom_type_script = "uid://vk65qxvuknl0"
+
+[node name="Idle" type="Node" parent="PlayerStateMachine"]
+script = ExtResource("4_yw30f")
+metadata/_custom_type_script = "uid://blro5rdhclucp"
+
+[node name="Run" type="Node" parent="PlayerStateMachine"]
+script = ExtResource("5_qjkh3")
+metadata/_custom_type_script = "uid://btayqp5copmp6"
