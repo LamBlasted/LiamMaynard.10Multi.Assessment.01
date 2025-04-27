@@ -1,7 +1,7 @@
 class_name State_Idle extends State 
 
 @onready var run: State = $"../Run"
-
+@onready var attack: State = $"../Attack"
 
 # What happens when the player enters this State?
 func Enter() -> void:
@@ -21,4 +21,6 @@ func Process( _delta: float ) -> State:
 
 # What happens with the input event in this State?
 func HandleInput( _event: InputEvent ) -> State:
+	if _event.is_action_pressed("attack"):
+		return attack
 	return null 
