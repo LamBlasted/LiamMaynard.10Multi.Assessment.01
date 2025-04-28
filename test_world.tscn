@@ -14,6 +14,34 @@ tile_map_data = PackedByteArray("AAAAAAAAAAAFAAkAAAAAAAEAAAAFAAoAAAAAAAIAAAAFAAs
 [node name="Player" parent="." instance=ExtResource("1_dxppu")]
 position = Vector2(135, 92)
 
-[node name="plants" parent="." instance=ExtResource("3_1lwx6")]
-y_sort_enabled = false
+[node name="Plants" type="Node2D" parent="."]
+
+[node name="plants" parent="Plants" instance=ExtResource("3_1lwx6")]
 position = Vector2(174, 77)
+
+[node name="plants2" parent="Plants" instance=ExtResource("3_1lwx6")]
+position = Vector2(64, 94)
+
+[node name="plants3" parent="Plants" instance=ExtResource("3_1lwx6")]
+position = Vector2(70, 208)
+
+[node name="plants4" parent="Plants" instance=ExtResource("3_1lwx6")]
+position = Vector2(-50, 96)
+
+[node name="plants5" parent="Plants" instance=ExtResource("3_1lwx6")]
+position = Vector2(183, 113)
+
+[node name="plants6" parent="Plants" instance=ExtResource("3_1lwx6")]
+position = Vector2(174, 209)
+
+[node name="plants7" parent="Plants" instance=ExtResource("3_1lwx6")]
+position = Vector2(219, 230)
+
+[node name="plants8" parent="Plants" instance=ExtResource("3_1lwx6")]
+position = Vector2(305, 109)
+
+[node name="plants9" parent="Plants" instance=ExtResource("3_1lwx6")]
+position = Vector2(-44, 208)
+
+[node name="plants10" parent="Plants" instance=ExtResource("3_1lwx6")]
+position = Vector2(36, 177)

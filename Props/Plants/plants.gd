@@ -1,5 +1,4 @@
-class_name Plant extends Node
-
+class_name Plant extends Node2D
 
 func _ready():
 	$hitbox.damaged.connect( take_damage )
