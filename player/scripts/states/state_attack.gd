@@ -8,23 +8,25 @@ var attacking : bool = false
 
 #Node References
 @onready var animation_player: AnimationPlayer = $"../../AnimationPlayer"
-#@onready var attack_anim : AnimationPlayer = $"../../Sprite2D/AttackEffectSprite/AnimationPlayer"
-#@onready var audio : AudioStreamPlayer2D = $"../../Audio/AudioStreamPlayer2D"
+@onready var attack_anim : AnimationPlayer = $"../../Sprite2D/AttackEffectSprite/AnimationPlayer"
+@onready var audio : AudioStreamPlayer = $"../../Audio/AudioStreamPlayer"
 
 #State References
 @onready var idle : State = $"../Idle"
-@onready var walk : State = $"../Walk"
+@onready var run: State_Run = $"../Run"
+
 # What happens when the player enters this State?
 func Enter() -> void:
 	player.UpdateAnimation("attack")
-	#attack_anim.play("attack_" + player.AnimDirection())
 	animation_player.animation_finished.connect( EndAttack )
-	
-	#audio.stream = attack_sound
-	#audio.pitch_scale = randf_range(0.9, 1.1)
-	#audio.play()
-	
 	attacking = true
+	
+	attack_anim.play("attack_" + player.AnimDirection())
+	
+	audio.stream = attack_sound
+	audio.pitch_scale = randf_range(0.9, 1.1)
+	audio.play()
+	
 	
 	pass
 
@@ -42,7 +44,7 @@ func Process( _delta: float ) -> State:
 		if player.direction == Vector2.ZERO:
 			return idle 
 		else: 
-			return walk
+			return run
 	return null
 
 # What happens with the input event in this State?
