@@ -8,7 +8,6 @@ class_name EnemyStateIdle extends EnemyState
 @export var state_duration_min : float = 0.5  
 @export var state_duration_max : float = 1.5 
 @export var after_idle_state : EnemyState
-
 var _timer : float = 0.0 
 
 

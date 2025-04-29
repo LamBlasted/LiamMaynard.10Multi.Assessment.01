@@ -1,6 +1,5 @@
 class_name EnemyStateWander extends EnemyState
 
-
 @export var anim_name : String = "walk"
 @export var wander_speed : float = 20.0
 
