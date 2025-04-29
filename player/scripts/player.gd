@@ -11,6 +11,7 @@ var direction : Vector2 = Vector2.ZERO
 @onready var state_machine: PlayerStateMachine = $PlayerStateMachine
 
 func _ready() -> void:
+	PlayerManager.player = self
 	state_machine.Initialize(self)
 	pass
 
