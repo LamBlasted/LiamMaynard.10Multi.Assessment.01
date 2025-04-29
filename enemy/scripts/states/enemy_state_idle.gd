@@ -1,6 +1,5 @@
 class_name EnemyStateIdle extends EnemyState
 
-
 @export var anim_name : String = "idle"
 
 # AI Export Category
@@ -10,11 +9,10 @@ class_name EnemyStateIdle extends EnemyState
 @export var after_idle_state : EnemyState
 var _timer : float = 0.0 
 
-
 # What happens when we initialize this state?
 func init() -> void:
 	pass
-
+	
 # What happens when the player enters this State?
 func Enter() -> void:
 	enemy.velocity = Vector2.ZERO
