@@ -2,7 +2,7 @@ class_name EnemyStateMachine extends Node
 
 
 var states : Array[ EnemyState ]
-var prev_state : EnemyState
+var prev_state : EnemyState 
 var current_state : EnemyState
 
 
