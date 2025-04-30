@@ -37,3 +37,15 @@ position = Vector2(221, 202)
 
 [node name="slime" parent="." instance=ExtResource("4_dsnr4")]
 position = Vector2(178, 114)
+
+[node name="slime2" parent="." instance=ExtResource("4_dsnr4")]
+position = Vector2(93, 105)
+
+[node name="slime3" parent="." instance=ExtResource("4_dsnr4")]
+position = Vector2(222, 103)
+
+[node name="slime4" parent="." instance=ExtResource("4_dsnr4")]
+position = Vector2(151, 150)
+
+[node name="slime5" parent="." instance=ExtResource("4_dsnr4")]
+position = Vector2(100, 144)

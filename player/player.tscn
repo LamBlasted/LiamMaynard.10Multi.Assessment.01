@@ -579,7 +579,6 @@ hframes = 19
 vframes = 3
 
 [node name="AttackEffectSprite" type="Sprite2D" parent="Sprite2D"]
-show_behind_parent = true
 position = Vector2(4.24098, -22.3615)
 rotation = 1.55851
 texture = ExtResource("3_boad6")

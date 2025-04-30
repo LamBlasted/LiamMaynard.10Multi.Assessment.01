@@ -15,13 +15,13 @@ var invulnerable : bool = false
 
 @onready var animation_player: AnimationPlayer = $AnimationPlayer
 @onready var sprite: Sprite2D = $Sprite2D
-#@onready var hit_box: HitBox = $HitBox
+@onready var hit_box: HitBox = $hitbox
 @onready var state_machine : EnemyStateMachine = $EnemyStateMachine
 
 func _ready():
 	state_machine.initialize( self )
 	player = PlayerManager.player
-	#hit_box.Damaged.connect(_take_damage)
+	hit_box.damaged.connect( _take_damage )
 	pass 
 
 func _process(_delta: float):
@@ -65,11 +65,11 @@ func AnimDirection() -> String:
 
 
 
-#func _take_damage(  hurt_box : HurtBox ) -> void:
-	#if invulnerable == true:
-		#return
-	#hp -= hurt_box.damage
-	#if hp > 0:
-		#enemy_damaged.emit( hurt_box )
-	#else:
-		#enemy_destroyed.emit( hurt_box )
+func _take_damage(  hurt_box : HurtBox ) -> void:
+	if invulnerable == true:
+		return
+	hp -= hurt_box.damage
+	if hp > 0:
+		enemy_damaged.emit( hurt_box )
+	else:
+		enemy_destroyed.emit( hurt_box )
