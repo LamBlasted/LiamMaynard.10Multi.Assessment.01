@@ -2,8 +2,11 @@ class_name EnemyStateStun extends EnemyState
 
 
 @export var anim_name : String = "stun"
-@export var knockback_speed : float = 200.0
 @export var decelerate_speed : float = 10.0
+@onready var effect_animation_player: AnimationPlayer = $"../../EffectAnimationPlayer"
+@onready var hurt_box: HurtBox = $"../../hurtbox"
+@export var knockback_speed : float = 200.0
+
 
 # AI Export Category
 @export_category("AI")
@@ -20,6 +23,8 @@ func init() -> void:
 
 # What happens when the player enters this State?
 func Enter() -> void:
+	hurt_box.monitoring = false 
+	effect_animation_player.play("damaged")
 	enemy.invulnerable = true
 	_animation_finished = false 
 	
@@ -34,6 +39,8 @@ func Enter() -> void:
 
 # What happens when the player exists this State?
 func Exit() -> void:
+	await get_tree().create_timer(.5).timeout
+	hurt_box.monitoring = true
 	enemy.invulnerable = false
 	enemy.animation_player.animation_finished.disconnect( _on_animation_finished )
 	pass 
@@ -53,8 +60,6 @@ func Physics( _delta : float ) -> EnemyState:
 func _on_enemy_damaged(  hurt_box : HurtBox ) -> void:
 	_damage_position = hurt_box.global_position
 	state_machine.ChangeState( self )
-
-
 
 func _on_animation_finished( _a : String ) -> void:
 	_animation_finished = true

@@ -1,23 +1,20 @@
-[gd_scene load_steps=33 format=3 uid="uid://b044xg5vw6k4r"]
+[gd_scene load_steps=35 format=3 uid="uid://b044xg5vw6k4r"]
 
 [ext_resource type="Script" uid="uid://dopm74p4ddu82" path="res://enemy/scripts/enemy.gd" id="1_afspt"]
 [ext_resource type="Texture2D" uid="uid://baq1felqa3kyv" path="res://enemy/slime/sprites/slime_sprite_sheet.png" id="1_ci0n5"]
+[ext_resource type="PackedScene" uid="uid://dc3twq78b6toi" path="res://utility/hurtbox/hurtbox.tscn" id="2_t4vdn"]
 [ext_resource type="AudioStream" uid="uid://d4flsit3v1jih" path="res://enemy/slime/audio/hit_01.wav" id="3_5r3dn"]
 [ext_resource type="Script" uid="uid://c3hbvfpijf3yw" path="res://enemy/scripts/states/enemy_state_machine.gd" id="3_lkvfe"]
 [ext_resource type="PackedScene" uid="uid://d2flx7ysgtb51" path="res://utility/hitbox/hitbox.tscn" id="3_nhojf"]
 [ext_resource type="Script" uid="uid://ilghqtcex0pe" path="res://enemy/scripts/states/enemy_state_idle.gd" id="4_dkdwu"]
 [ext_resource type="AudioStream" uid="uid://dp0dh4wspnfkm" path="res://enemy/slime/audio/hit_00.wav" id="4_nhojf"]
 [ext_resource type="Script" uid="uid://bpc1xlty1p2j3" path="res://enemy/scripts/states/enemy_state_wander.gd" id="5_e2hc1"]
-[ext_resource type="Script" uid="uid://c1m3mltjs2x2p" path="res://utility/hurtbox/hurtbox.gd" id="6_dkdwu"]
 [ext_resource type="Texture2D" uid="uid://fhmxe4i1tjlr" path="res://enemy/slime/sprites/DestroySmoke.png" id="7_e2hc1"]
 [ext_resource type="Script" uid="uid://dljf4af03wa1t" path="res://enemy/scripts/states/enemy_state_stun.gd" id="8_t4vdn"]
 [ext_resource type="Script" uid="uid://bfjgno64482i" path="res://enemy/scripts/states/enemy_state_destroy.gd" id="11_t4vdn"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_e2hc1"]
-radius = 7.98031
-
-[sub_resource type="CircleShape2D" id="CircleShape2D_t4vdn"]
-radius = 7.98031
+radius = 8.48573
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_afspt"]
 radius = 3.0
@@ -728,26 +725,63 @@ _data = {
 &"destroy": SubResource("Animation_t4vdn")
 }
 
+[sub_resource type="Animation" id="Animation_06o50"]
+resource_name = "default"
+length = 0.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_i7xs0"]
+resource_name = "damaged"
+length = 0.6
+step = 0.1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0.0392157), Color(1, 1, 1, 1), Color(1, 1, 1, 0.0392157), Color(1, 1, 1, 1), Color(1, 1, 1, 0.0392157), Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_otk40"]
+_data = {
+&"damaged": SubResource("Animation_i7xs0"),
+&"default": SubResource("Animation_06o50")
+}
+
 [node name="slime" type="CharacterBody2D"]
 collision_layer = 0
 collision_mask = 16
 script = ExtResource("1_afspt")
 
-[node name="HurtBox" type="Area2D" parent="."]
-script = ExtResource("6_dkdwu")
-metadata/_custom_type_script = "uid://c1m3mltjs2x2p"
+[node name="hurtbox" parent="." instance=ExtResource("2_t4vdn")]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="HurtBox"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="hurtbox"]
 position = Vector2(-0.104197, -6.77282)
 shape = SubResource("CircleShape2D_e2hc1")
 debug_color = Color(0.78998, 0.274251, 0.233624, 0.42)
 
 [node name="hitbox" parent="." instance=ExtResource("3_nhojf")]
 
-[node name="CollisionShape2D2" type="CollisionShape2D" parent="hitbox"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="hitbox"]
 position = Vector2(-0.104197, -6.77282)
-shape = SubResource("CircleShape2D_t4vdn")
-debug_color = Color(0.804365, 0.554583, 0, 0.42)
+shape = SubResource("CircleShape2D_e2hc1")
+debug_color = Color(0.733333, 0.541176, 0.113725, 0.494118)
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 position = Vector2(0, -7)
@@ -779,6 +813,7 @@ next_state = NodePath("../Idle")
 
 [node name="Stun" type="Node" parent="EnemyStateMachine" node_paths=PackedStringArray("next_state")]
 script = ExtResource("8_t4vdn")
+knockback_speed = 100.0
 next_state = NodePath("../Idle")
 
 [node name="Destroy" type="Node" parent="EnemyStateMachine"]
@@ -795,4 +830,9 @@ hframes = 6
 [node name="AnimationPlayer" type="AnimationPlayer" parent="DestroyEffectSprite"]
 libraries = {
 &"": SubResource("AnimationLibrary_yndxk")
+}
+
+[node name="EffectAnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_otk40")
 }
