@@ -25,7 +25,7 @@ func Enter() -> void:
 	attack_anim.play("attack_" + player.AnimDirection())
 	
 	audio.stream = attack_sound
-	audio.pitch_scale = randf_range(0.9, 1.1)
+	audio.pitch_scale = randf_range(0.8, 1.2)
 	
 	await get_tree().create_timer( 0.15 ).timeout
 	hurt_box.monitoring = true

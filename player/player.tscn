@@ -112,10 +112,10 @@ tracks/2/path = NodePath(".:position")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
+"times": PackedFloat32Array(0, 0.275),
+"transitions": PackedFloat32Array(1, 1),
 "update": 0,
-"values": [Vector2(0, -0.406)]
+"values": [Vector2(0, -0.406), Vector2(2.02765, 7.41494)]
 }
 tracks/3/type = "value"
 tracks/3/imported = false
@@ -148,10 +148,10 @@ tracks/5/path = NodePath(".:rotation")
 tracks/5/interp = 1
 tracks/5/loop_wrap = true
 tracks/5/keys = {
-"times": PackedFloat32Array(0, 0.25, 0.319394),
-"transitions": PackedFloat32Array(1, 1, 1),
+"times": PackedFloat32Array(0, 0.275),
+"transitions": PackedFloat32Array(1, 1),
 "update": 0,
-"values": [-1.59963, -0.513524, 0.0210997]
+"values": [-1.59963, 0.129513]
 }
 
 [sub_resource type="Animation" id="Animation_kb6p2"]
@@ -189,10 +189,10 @@ tracks/2/path = NodePath(".:position")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
+"times": PackedFloat32Array(0, 0.3),
+"transitions": PackedFloat32Array(1, 1),
 "update": 0,
-"values": [Vector2(-10, -5)]
+"values": [Vector2(-10, -5), Vector2(-12.0276, -3.26202)]
 }
 tracks/3/type = "value"
 tracks/3/imported = false
@@ -225,10 +225,10 @@ tracks/5/path = NodePath(".:rotation")
 tracks/5/interp = 1
 tracks/5/loop_wrap = true
 tracks/5/keys = {
-"times": PackedFloat32Array(0, 0.269186),
+"times": PackedFloat32Array(0, 0.294835),
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
-"values": [0.0, -0.888373]
+"values": [0.0, -0.46396]
 }
 
 [sub_resource type="Animation" id="Animation_yllr7"]
@@ -266,10 +266,10 @@ tracks/2/path = NodePath(".:position")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/keys = {
-"times": PackedFloat32Array(0, 0.324862),
+"times": PackedFloat32Array(0, 0.275),
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
-"values": [Vector2(6.61513, -1.88837), Vector2(0.879778, -1.56974)]
+"values": [Vector2(6.61513, -1.88837), Vector2(-1.78514, 2.45659)]
 }
 tracks/3/type = "value"
 tracks/3/imported = false
@@ -302,10 +302,10 @@ tracks/5/path = NodePath(".:rotation")
 tracks/5/interp = 1
 tracks/5/loop_wrap = true
 tracks/5/keys = {
-"times": PackedFloat32Array(0, 0.248204, 0.333162),
+"times": PackedFloat32Array(0, 0.31099, 0.325),
 "transitions": PackedFloat32Array(1, 1, 1),
 "update": 0,
-"values": [1.19886, 0.640536, 1.88146]
+"values": [1.19886, 0.195477, 1.38692]
 }
 
 [sub_resource type="Animation" id="Animation_wodsf"]
@@ -334,7 +334,7 @@ _data = {
 }
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_8t03j"]
-radius = 14.1588
+radius = 17.5096
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_rkbax"]
 radius = 6.74778
@@ -392,7 +392,7 @@ tracks/1/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [Vector2(0, 13)]
+"values": [Vector2(5, 16.556)]
 }
 
 [sub_resource type="Animation" id="Animation_8t03j"]
@@ -421,7 +421,7 @@ tracks/1/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [Vector2(-13, 0)]
+"values": [Vector2(-16, -2)]
 }
 
 [sub_resource type="Animation" id="Animation_hg6s5"]
@@ -450,7 +450,7 @@ tracks/1/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [Vector2(0, -15)]
+"values": [Vector2(5, -12)]
 }
 
 [sub_resource type="Animation" id="Animation_oul6g"]
@@ -571,22 +571,6 @@ tracks/0/keys = {
 "values": [55]
 }
 
-[sub_resource type="Animation" id="Animation_65viv"]
-resource_name = "stun_up"
-length = 0.3
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Sprite2D:frame")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [56]
-}
-
 [sub_resource type="Animation" id="Animation_x7c3f"]
 resource_name = "stun_side"
 length = 0.3
@@ -601,6 +585,22 @@ tracks/0/keys = {
 "transitions": PackedFloat32Array(1),
 "update": 0,
 "values": [57]
+}
+
+[sub_resource type="Animation" id="Animation_65viv"]
+resource_name = "stun_up"
+length = 0.3
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [56]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_g1dw6"]
@@ -701,7 +701,6 @@ hframes = 19
 vframes = 5
 
 [node name="AttackEffectSprite" type="Sprite2D" parent="Sprite2D"]
-show_behind_parent = true
 position = Vector2(4.24098, -22.3615)
 rotation = 1.55851
 texture = ExtResource("3_boad6")
@@ -722,7 +721,7 @@ collision_mask = 256
 monitoring = false
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Sprite2D/AttackHurtbox"]
-position = Vector2(-0.504837, 5.27387)
+position = Vector2(-5.71878, 1.7979)
 shape = SubResource("CircleShape2D_8t03j")
 debug_color = Color(0.942012, 0.198219, 0.357549, 0.42)
 
