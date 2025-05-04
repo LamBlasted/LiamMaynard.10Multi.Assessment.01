@@ -14,16 +14,16 @@ offset_right = 320.0
 offset_bottom = 181.0
 
 [node name="Sprite2D" type="Sprite2D" parent="Control"]
-position = Vector2(233.177, 11.8916)
+position = Vector2(248.02, 11.8916)
 texture = ExtResource("1_qr6o2")
 region_enabled = true
 region_rect = Rect2(29, 0, 34, 8)
 
 [node name="HFlowContainer" type="HFlowContainer" parent="Control"]
 layout_mode = 0
-offset_left = 168.13
+offset_left = 182.973
 offset_top = 18.6822
-offset_right = 298.13
+offset_right = 312.973
 offset_bottom = 105.682
 theme_override_constants/h_separation = 4
 theme_override_constants/v_separation = 2

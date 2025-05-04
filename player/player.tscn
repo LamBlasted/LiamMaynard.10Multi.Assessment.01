@@ -269,7 +269,7 @@ tracks/2/keys = {
 "times": PackedFloat32Array(0, 0.275),
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
-"values": [Vector2(6.61513, -1.88837), Vector2(-1.78514, 2.45659)]
+"values": [Vector2(6.61513, -1.88837), Vector2(-1.785, 0)]
 }
 tracks/3/type = "value"
 tracks/3/imported = false
@@ -392,7 +392,7 @@ tracks/1/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [Vector2(5, 16.556)]
+"values": [Vector2(5, 15)]
 }
 
 [sub_resource type="Animation" id="Animation_8t03j"]
@@ -421,7 +421,7 @@ tracks/1/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [Vector2(-16, -2)]
+"values": [Vector2(-15, -2)]
 }
 
 [sub_resource type="Animation" id="Animation_hg6s5"]
@@ -447,7 +447,7 @@ tracks/1/path = NodePath("Sprite2D/AttackHurtbox:position")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
-"times": PackedFloat32Array(0),
+"times": PackedFloat32Array(0.025),
 "transitions": PackedFloat32Array(1),
 "update": 0,
 "values": [Vector2(5, -12)]
@@ -701,6 +701,7 @@ hframes = 19
 vframes = 5
 
 [node name="AttackEffectSprite" type="Sprite2D" parent="Sprite2D"]
+show_behind_parent = true
 position = Vector2(4.24098, -22.3615)
 rotation = 1.55851
 texture = ExtResource("3_boad6")
