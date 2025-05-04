@@ -766,7 +766,7 @@ _data = {
 
 [node name="slime" type="CharacterBody2D"]
 collision_layer = 0
-collision_mask = 16
+collision_mask = 272
 script = ExtResource("1_afspt")
 
 [node name="hurtbox" parent="." instance=ExtResource("2_t4vdn")]
