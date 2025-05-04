@@ -3,9 +3,13 @@ class_name State_Idle extends State
 @onready var run: State = $"../Run"
 @onready var attack: State = $"../Attack"
 
+@onready var hurt_box: HurtBox = %AttackHurtbox
+
+
 # What happens when the player enters this State?
 func Enter() -> void:
 	player.UpdateAnimation("idle")
+	hurt_box.monitoring = false 
 	pass
 
 # What happens when the player exists this State?
