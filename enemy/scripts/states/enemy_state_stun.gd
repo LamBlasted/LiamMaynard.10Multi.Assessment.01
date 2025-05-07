@@ -39,7 +39,7 @@ func Enter() -> void:
 
 # What happens when the player exists this State?
 func Exit() -> void:
-	await get_tree().create_timer(.4).timeout
+	await get_tree().create_timer(.3).timeout
 	hurt_box.monitoring = true
 	enemy.invulnerable = false
 	enemy.animation_player.animation_finished.disconnect( _on_animation_finished )
