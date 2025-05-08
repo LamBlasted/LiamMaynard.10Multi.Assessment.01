@@ -4,13 +4,12 @@
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_3fm08"]
 resource_local_to_scene = true
-size = Vector2(16, 16)
+size = Vector2(16, 32)
 
 [node name="LevelTransition" type="Area2D"]
 collision_layer = 0
 monitorable = false
 script = ExtResource("1_smikd")
-size = 1
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(-8, 0)

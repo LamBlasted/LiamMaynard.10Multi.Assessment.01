@@ -18,3 +18,4 @@ position = Vector2(166, 112)
 position = Vector2(368, 104)
 level = "uid://8cf1he2h0shb"
 size = 3
+side = 1
