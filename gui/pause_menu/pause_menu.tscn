@@ -32,10 +32,11 @@ layout_mode = 2
 theme_override_font_sizes/font_size = 11
 text = "Save"
 
-[node name="Load" type="Button" parent="VBoxContainer"]
+[node name="Quit" type="Button" parent="VBoxContainer"]
 layout_mode = 2
 theme_override_font_sizes/font_size = 11
-text = "Load"
+text = "Quit
+"
 
 [node name="Label" type="Label" parent="."]
 modulate = Color(1, 1, 1, 0.52549)
