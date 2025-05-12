@@ -1,12 +1,14 @@
 extends CanvasLayer
 
-@onready var save: Button = $VBoxContainer/Save
-@onready var quit: Button = $VBoxContainer/Quit
+@onready var button_save: Button = $VBoxContainer/Save
+@onready var button_quit: Button = $VBoxContainer/Quit
 
 var is_paused : bool = false 
 
 func _ready() -> void:
 	hide_pause_menu()
+	button_save.pressed.connect( on_save_pressed )
+	button_quit.pressed.connect( on_quit_pressed )
 	pass
 
 
@@ -28,3 +30,14 @@ func hide_pause_menu() -> void:
 	get_tree().paused = false
 	visible = false
 	is_paused = false 
+
+func on_save_pressed() -> void: 
+	if is_paused == false: 
+		return
+	SaveManager.save_game()
+	hide_pause_menu()
+	pass
+
+func on_quit_pressed() -> void:
+	
+	pass

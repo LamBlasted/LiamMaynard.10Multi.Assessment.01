@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="Liam Maynard 10 MultiMedia - Assessment Task 1"
-run/main_scene="uid://bwcdifbfw5ebn"
+run/main_scene="uid://b87tkkjtf7ul7"
 run/enable_alt_space_menu=true
 config/features=PackedStringArray("4.4", "Forward Plus")
 boot_splash/show_image=false
@@ -22,6 +22,7 @@ config/icon="res://icon.svg"
 LevelManager="*res://00_globals/global_level_manager.gd"
 PlayerHud="*res://gui/player_hud/player_hud.tscn"
 PlayerManager="*res://00_globals/global_player_manager.gd"
+SaveManager="*res://00_globals/global_save_manager.gd"
 PauseMenu="*res://gui/pause_menu/pause_menu.tscn"
 
 [display]
@@ -31,6 +32,10 @@ window/size/viewport_height=180
 window/size/window_width_override=1280
 window/size/window_height_override=720
 window/stretch/mode="viewport"
+
+[gui]
+
+theme/custom_font="uid://b6onp8kspgpmd"
 
 [input]
 
