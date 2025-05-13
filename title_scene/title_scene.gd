@@ -1,5 +1,7 @@
 extends Node2D
 
+const START_LEVEL : String = "res://levels/area01/01.tscn"
+
 @onready var button_new: Button = $CanvasLayer/Control/New
 @onready var button_quit: Button = $CanvasLayer/Control/Quit
 @onready var button_continue : Button = $CanvasLayer/Control/Continue
@@ -12,6 +14,10 @@ func _ready() -> void:
 	PlayerHud.visible = false
 	PauseMenu.process_mode = Node.PROCESS_MODE_DISABLED 
 	
+	if SaveManager.get_save_file() == null:
+		button_continue.disabled = true
+		button_continue.visible = false
+	
 	setup_title_scene()
 	
 	LevelManager.level_load_started.connect( exit_title_screen )
@@ -20,6 +26,8 @@ func _ready() -> void:
 
 
 func setup_title_scene() -> void: 
+	button_new.pressed.connect( start_game )
+	button_quit.pressed.connect( quit_game )
 	button_continue.pressed.connect( load_game )
 	
 	button_new.grab_focus()
@@ -27,7 +35,7 @@ func setup_title_scene() -> void:
 
 
 func start_game() -> void: 
-	
+	LevelManager.load_new_level( START_LEVEL, "", Vector2.ZERO )
 	pass
 
 func load_game() -> void:
@@ -43,7 +51,6 @@ func exit_title_screen() -> void:
 	pass
 
 
-
-func _on_quit_pressed() -> void:
+func quit_game() -> void: 
 	get_tree().quit()
 	pass
