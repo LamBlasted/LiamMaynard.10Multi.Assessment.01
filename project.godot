@@ -11,15 +11,8 @@ config_version=5
 [application]
 
 config/name="Liam Maynard 10 MultiMedia - Assessment Task 1"
-<<<<<<< HEAD
 run/main_scene="uid://bwcdifbfw5ebn"
-=======
-run/main_scene="uid://b87tkkjtf7ul7"
-<<<<<<< HEAD
-=======
->>>>>>> 5d10e0e2441052e4c952c8a64cf28593dc237959
 run/enable_alt_space_menu=true
->>>>>>> 34b6a7394294db1a866c9eddab969a419949a0fb
 config/features=PackedStringArray("4.4", "Forward Plus")
 boot_splash/show_image=false
 config/icon="res://icon.svg"
