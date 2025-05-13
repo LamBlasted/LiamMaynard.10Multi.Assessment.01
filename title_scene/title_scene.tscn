@@ -283,23 +283,6 @@ theme_override_fonts/font = ExtResource("5_lj5tl")
 theme_override_font_sizes/font_size = 16
 text = "New Game"
 
-[node name="Quit" type="Button" parent="CanvasLayer/Control"]
-layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = 3.89703
-offset_top = 8.32378
-offset_right = 69.897
-offset_bottom = 29.3238
-grow_horizontal = 2
-grow_vertical = 2
-theme_override_fonts/font = ExtResource("5_lj5tl")
-theme_override_font_sizes/font_size = 16
-text = "Quit"
-
 [node name="Continue" type="Button" parent="CanvasLayer/Control"]
 layout_mode = 1
 anchors_preset = 7
@@ -316,6 +299,23 @@ grow_vertical = 0
 theme_override_fonts/font = ExtResource("5_lj5tl")
 theme_override_font_sizes/font_size = 16
 text = "Continue"
+
+[node name="Quit" type="Button" parent="CanvasLayer/Control"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 3.89703
+offset_top = 8.32378
+offset_right = 69.897
+offset_bottom = 29.3238
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("5_lj5tl")
+theme_override_font_sizes/font_size = 16
+text = "Quit"
 
 [node name="PlayerSpawn" parent="." instance=ExtResource("6_5wnq4")]
 position = Vector2(164.521, 80.7523)

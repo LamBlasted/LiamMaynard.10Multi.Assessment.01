@@ -8,7 +8,6 @@ var is_paused : bool = false
 func _ready() -> void:
 	hide_pause_menu()
 	button_save.pressed.connect( on_save_pressed )
-	button_quit.pressed.connect( on_quit_pressed )
 	pass
 
 
@@ -36,8 +35,4 @@ func on_save_pressed() -> void:
 		return
 	SaveManager.save_game()
 	hide_pause_menu()
-	pass
-
-func on_quit_pressed() -> void:
-	
 	pass

@@ -12,11 +12,30 @@ func _ready() -> void:
 	PlayerHud.visible = false
 	PauseMenu.process_mode = Node.PROCESS_MODE_DISABLED 
 	
+	setup_title_scene()
+	
+	LevelManager.level_load_started.connect( exit_title_screen )
+	
 	pass
 
 
+func setup_title_scene() -> void: 
+	button_continue.pressed.connect( load_game )
+	
+	button_new.grab_focus()
+	pass
+
+
+func start_game() -> void: 
+	
+	pass
+
+func load_game() -> void:
+	SaveManager.load_game()
+	pass
+
 func exit_title_screen() -> void:
-	PlayerManager.player.visible = false 
+	PlayerManager.player.visible = true 
 	PlayerHud.visible = true
 	PauseMenu.process_mode = Node.PROCESS_MODE_ALWAYS
 	
