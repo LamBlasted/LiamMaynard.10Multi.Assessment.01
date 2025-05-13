@@ -27,7 +27,10 @@ enum SIDE { LEFT, RIGHT, TOP, BOTTOM }
 
 @onready var collision_shape: CollisionShape2D = $CollisionShape2D
 
+<<<<<<< HEAD
+=======
 
+>>>>>>> 34b6a7394294db1a866c9eddab969a419949a0fb
 func _ready() -> void:
 	_update_area()
 	if Engine.is_editor_hint():
@@ -85,6 +88,18 @@ func _update_area() -> void:
 	# Adjust the area size based on the side
 	if side == SIDE.TOP:
 		new_rect.x *= size
+<<<<<<< HEAD
+		new_position.y -= 8  # Offset for tile size (16/2 = 8)
+	elif side == SIDE.BOTTOM:
+		new_rect.x *= size
+		new_position.y += 8  # Offset for tile size (16/2 = 8)
+	elif side == SIDE.LEFT:
+		new_rect.y *= size
+		new_position.x -= 8  # Offset for tile size (16/2 = 8)
+	elif side == SIDE.RIGHT:
+		new_rect.y *= size
+		new_position.x += 8  # Offset for tile size (16/2 = 8)
+=======
 		new_position.y -= 8 
 	elif side == SIDE.BOTTOM:
 		new_rect.x *= size
@@ -95,6 +110,7 @@ func _update_area() -> void:
 	elif side == SIDE.RIGHT:
 		new_rect.y *= size
 		new_position.x += 8  	
+>>>>>>> 34b6a7394294db1a866c9eddab969a419949a0fb
 	
 	if collision_shape == null:
 		collision_shape = get_node("CollisionShape2D")
