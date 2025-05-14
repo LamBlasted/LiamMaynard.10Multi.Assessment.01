@@ -2,8 +2,8 @@ extends CanvasLayer
 
 const TITLE_SCREEN : String = "res://title_scene/title_scene.tscn"
 
-@onready var button_save: Button = $VBoxContainer/Save
-@onready var button_quit: Button = $VBoxContainer/Quit
+@onready var button_save: Button = $HBoxContainer/Save
+@onready var button_quit: Button = $HBoxContainer/Quit
 
 var is_paused : bool = false 
 
