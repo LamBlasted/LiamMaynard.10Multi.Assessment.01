@@ -1,10 +1,11 @@
-[gd_scene load_steps=6 format=4 uid="uid://gtmq1hnkm0y8"]
+[gd_scene load_steps=7 format=4 uid="uid://gtmq1hnkm0y8"]
 
 [ext_resource type="PackedScene" uid="uid://cg1jhhvwm5br6" path="res://tilemaps/grass_01.tscn" id="1_phcts"]
 [ext_resource type="Script" uid="uid://doen0mrjhm1jg" path="res://levels/scripts/levels.gd" id="1_rtord"]
 [ext_resource type="PackedScene" uid="uid://c07302kkmfbdt" path="res://levels/level_transition.tscn" id="2_rtord"]
 [ext_resource type="PackedScene" uid="uid://c75my0x5ohw1f" path="res://props/plants/plants.tscn" id="4_ecpim"]
 [ext_resource type="PackedScene" uid="uid://b044xg5vw6k4r" path="res://enemy/slime/slime.tscn" id="5_gl83w"]
+[ext_resource type="PackedScene" uid="uid://qwsj2f3v4t5n" path="res://enemy/goblin/goblin.tscn" id="6_x2be5"]
 
 [node name="05" type="Node2D"]
 script = ExtResource("1_rtord")
@@ -65,3 +66,6 @@ position = Vector2(80, 176)
 
 [node name="slime4" parent="." instance=ExtResource("5_gl83w")]
 position = Vector2(296, 200)
+
+[node name="goblin" parent="." instance=ExtResource("6_x2be5")]
+position = Vector2(200, 208)
