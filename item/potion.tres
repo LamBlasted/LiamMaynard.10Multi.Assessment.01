@@ -9,7 +9,7 @@ region = Rect2(32, 0, 32, 32)
 
 [resource]
 script = ExtResource("1_447nn")
-name = "Postion "
+name = "Potion "
 description = "This mysterious liquid seems quite healthy!"
 texture = SubResource("AtlasTexture_dspsv")
 metadata/_custom_type_script = "uid://bjgwf0c2ms83k"

@@ -9,6 +9,7 @@ const START_LEVEL : String = "res://levels/area01/01.tscn"
 
 
 func _ready() -> void:
+	Input.set_mouse_mode(Input.MOUSE_MODE_HIDDEN)
 	get_tree().paused = true
 	PlayerManager.player.visible = false 
 	PlayerHud.visible = false
