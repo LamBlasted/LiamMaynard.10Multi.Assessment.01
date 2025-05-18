@@ -19,6 +19,7 @@ script = ExtResource("1_rwe7i")
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 [node name="ColorRect" type="ColorRect" parent="."]
 anchors_preset = 15
@@ -29,6 +30,8 @@ grow_vertical = 2
 color = Color(0.13, 0.13, 0.13, 0.635294)
 
 >>>>>>> parent of 39ec57c (Update pause_menu.tscn)
+=======
+>>>>>>> parent of 1cd5ad5 (ramdomf stuff idc)
 =======
 >>>>>>> parent of 1cd5ad5 (ramdomf stuff idc)
 =======
