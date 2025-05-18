@@ -2,8 +2,13 @@ extends CanvasLayer
 
 const TITLE_SCREEN : String = "res://title_scene/title_scene.tscn"
 
+<<<<<<< Updated upstream
 @onready var button_save: Button = $Control/HBoxContainer/Save
 @onready var button_quit: Button = $Control/HBoxContainer/Quit
+=======
+@onready var button_save: Button = $HBoxContainer/Save
+@onready var button_quit: Button = $HBoxContainer/Quit
+>>>>>>> Stashed changes
 
 var is_paused : bool = false 
 
