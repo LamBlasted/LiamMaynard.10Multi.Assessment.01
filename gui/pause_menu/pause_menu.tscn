@@ -21,7 +21,11 @@ script = ExtResource("1_rwe7i")
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
+<<<<<<< HEAD
 =======
+=======
+>>>>>>> parent of 39ec57c (Update pause_menu.tscn)
 [node name="ColorRect" type="ColorRect" parent="."]
 anchors_preset = 15
 anchor_right = 1.0
@@ -30,9 +34,11 @@ grow_horizontal = 2
 grow_vertical = 2
 color = Color(0.13, 0.13, 0.13, 0.635294)
 
+<<<<<<< HEAD
 >>>>>>> parent of 39ec57c (Update pause_menu.tscn)
 =======
->>>>>>> parent of 1cd5ad5 (ramdomf stuff idc)
+[node name="Label" type="Label" parent="."]
+>>>>>>> parent of 964160a (updatong pausem enue)
 =======
 >>>>>>> parent of 1cd5ad5 (ramdomf stuff idc)
 =======
@@ -41,6 +47,10 @@ color = Color(0.13, 0.13, 0.13, 0.635294)
 >>>>>>> parent of 1cd5ad5 (ramdomf stuff idc)
 =======
 >>>>>>> parent of 1cd5ad5 (ramdomf stuff idc)
+=======
+>>>>>>> parent of 1cd5ad5 (ramdomf stuff idc)
+=======
+>>>>>>> parent of 39ec57c (Update pause_menu.tscn)
 [node name="Label" type="Label" parent="."]
 modulate = Color(1, 1, 1, 0.52549)
 anchors_preset = 4
