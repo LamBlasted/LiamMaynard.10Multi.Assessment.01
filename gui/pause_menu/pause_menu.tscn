@@ -1,8 +1,7 @@
-[gd_scene load_steps=6 format=3 uid="uid://b6ofejjpvx2mi"]
+[gd_scene load_steps=5 format=3 uid="uid://b6ofejjpvx2mi"]
 
 [ext_resource type="Script" uid="uid://danmay3snxtuv" path="res://gui/pause_menu/pause_menu.gd" id="1_rwe7i"]
 [ext_resource type="Texture2D" uid="uid://dh1jmsw1ijirc" path="res://item/sprites/items.png" id="2_1wcnx"]
-[ext_resource type="PackedScene" uid="uid://btvmqkfpu74hl" path="res://gui/pause_menu/inventory/inventory_slot.tscn" id="3_u4fh8"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_u4fh8"]
 atlas = ExtResource("2_1wcnx")
@@ -17,6 +16,9 @@ script = ExtResource("1_rwe7i")
 
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
+<<<<<<< HEAD
+<<<<<<< HEAD
 =======
 [node name="ColorRect" type="ColorRect" parent="."]
 anchors_preset = 15
@@ -27,41 +29,24 @@ grow_vertical = 2
 color = Color(0.13, 0.13, 0.13, 0.635294)
 
 >>>>>>> parent of 39ec57c (Update pause_menu.tscn)
-[node name="Label" type="Label" parent="."]
 =======
-[node name="Control" type="Control" parent="."]
-layout_mode = 3
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-
-[node name="ColorRect" type="ColorRect" parent="Control"]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-color = Color(0.13, 0.13, 0.13, 0.635294)
-
-[node name="Label" type="Label" parent="Control"]
->>>>>>> 9b62cd6451c5faedd18e38a964e770c3105c19da
+>>>>>>> parent of 1cd5ad5 (ramdomf stuff idc)
+=======
+>>>>>>> parent of 1cd5ad5 (ramdomf stuff idc)
+=======
+>>>>>>> parent of 1cd5ad5 (ramdomf stuff idc)
+[node name="Label" type="Label" parent="."]
 modulate = Color(1, 1, 1, 0.52549)
-layout_mode = 1
 anchors_preset = 4
 anchor_top = 0.5
 anchor_bottom = 0.5
 offset_left = 14.0
-offset_top = -71.1818
+offset_top = -73.0
 offset_right = 72.0
-offset_bottom = -53.1818
+offset_bottom = -55.0
 grow_vertical = 2
-size_flags_horizontal = 4
 text = "{ paused }"
 
-<<<<<<< HEAD
 [node name="PanelContainer" type="PanelContainer" parent="."]
 offset_left = 15.0
 offset_top = 39.0
@@ -70,73 +55,21 @@ offset_bottom = 79.0
 theme_override_styles/panel = SubResource("StyleBoxTexture_ddhtv")
 
 [node name="HBoxContainer" type="HBoxContainer" parent="."]
-=======
-[node name="PanelContainer" type="PanelContainer" parent="Control"]
-layout_mode = 1
-anchors_preset = 4
-anchor_top = 0.5
-anchor_bottom = 0.5
-offset_left = 12.2989
-offset_top = -48.9674
-offset_right = 208.299
-offset_bottom = 39.0326
-grow_vertical = 2
-size_flags_horizontal = 4
-theme_override_styles/panel = SubResource("StyleBoxTexture_ddhtv")
-
-[node name="GridContainer" type="GridContainer" parent="Control/PanelContainer"]
-layout_mode = 2
-columns = 5
-
-[node name="InventorySlot" parent="Control/PanelContainer/GridContainer" instance=ExtResource("3_u4fh8")]
-layout_mode = 2
-
-[node name="InventorySlot2" parent="Control/PanelContainer/GridContainer" instance=ExtResource("3_u4fh8")]
-layout_mode = 2
-
-[node name="InventorySlot3" parent="Control/PanelContainer/GridContainer" instance=ExtResource("3_u4fh8")]
-layout_mode = 2
-
-[node name="InventorySlot4" parent="Control/PanelContainer/GridContainer" instance=ExtResource("3_u4fh8")]
-layout_mode = 2
-
-[node name="InventorySlot5" parent="Control/PanelContainer/GridContainer" instance=ExtResource("3_u4fh8")]
-layout_mode = 2
-
-[node name="InventorySlot6" parent="Control/PanelContainer/GridContainer" instance=ExtResource("3_u4fh8")]
-layout_mode = 2
-
-[node name="InventorySlot7" parent="Control/PanelContainer/GridContainer" instance=ExtResource("3_u4fh8")]
-layout_mode = 2
-
-[node name="InventorySlot8" parent="Control/PanelContainer/GridContainer" instance=ExtResource("3_u4fh8")]
-layout_mode = 2
-
-[node name="InventorySlot9" parent="Control/PanelContainer/GridContainer" instance=ExtResource("3_u4fh8")]
-layout_mode = 2
-
-[node name="InventorySlot10" parent="Control/PanelContainer/GridContainer" instance=ExtResource("3_u4fh8")]
-layout_mode = 2
-
-[node name="HBoxContainer" type="HBoxContainer" parent="Control"]
-layout_mode = 1
->>>>>>> 9b62cd6451c5faedd18e38a964e770c3105c19da
 anchors_preset = 4
 anchor_top = 0.5
 anchor_bottom = 0.5
 offset_left = 13.0
-offset_top = 49.8182
+offset_top = 48.0
 offset_right = 167.0
-offset_bottom = 70.8182
+offset_bottom = 69.0
 grow_vertical = 2
-size_flags_horizontal = 4
 
-[node name="Save" type="Button" parent="Control/HBoxContainer"]
+[node name="Save" type="Button" parent="HBoxContainer"]
 custom_minimum_size = Vector2(60, 0)
 layout_mode = 2
 text = "Save"
 
-[node name="Quit" type="Button" parent="Control/HBoxContainer"]
+[node name="Quit" type="Button" parent="HBoxContainer"]
 custom_minimum_size = Vector2(69, 0)
 layout_mode = 2
 text = "Quit
