@@ -1,17 +1,17 @@
 [gd_scene load_steps=35 format=3 uid="uid://b044xg5vw6k4r"]
 
-[ext_resource type="Script" uid="uid://dopm74p4ddu82" path="res://enemy/00scripts/enemy.gd" id="1_afspt"]
+[ext_resource type="Script" uid="uid://dopm74p4ddu82" path="res://enemy/scripts/enemy.gd" id="1_afspt"]
 [ext_resource type="Texture2D" uid="uid://baq1felqa3kyv" path="res://enemy/slime/sprites/slime_sprite_sheet.png" id="1_ci0n5"]
 [ext_resource type="PackedScene" uid="uid://dc3twq78b6toi" path="res://utility/hurtbox/hurtbox.tscn" id="2_t4vdn"]
 [ext_resource type="AudioStream" uid="uid://d4flsit3v1jih" path="res://enemy/slime/audio/hit_01.wav" id="3_5r3dn"]
-[ext_resource type="Script" uid="uid://c3hbvfpijf3yw" path="res://enemy/00scripts/states/enemy_state_machine.gd" id="3_lkvfe"]
+[ext_resource type="Script" uid="uid://c3hbvfpijf3yw" path="res://enemy/scripts/states/enemy_state_machine.gd" id="3_lkvfe"]
 [ext_resource type="PackedScene" uid="uid://d2flx7ysgtb51" path="res://utility/hitbox/hitbox.tscn" id="3_nhojf"]
-[ext_resource type="Script" uid="uid://ilghqtcex0pe" path="res://enemy/00scripts/states/enemy_state_idle.gd" id="4_dkdwu"]
+[ext_resource type="Script" uid="uid://ilghqtcex0pe" path="res://enemy/scripts/states/enemy_state_idle.gd" id="4_dkdwu"]
 [ext_resource type="AudioStream" uid="uid://dp0dh4wspnfkm" path="res://enemy/slime/audio/hit_00.wav" id="4_nhojf"]
-[ext_resource type="Script" uid="uid://bpc1xlty1p2j3" path="res://enemy/00scripts/states/enemy_state_wander.gd" id="5_e2hc1"]
+[ext_resource type="Script" uid="uid://bpc1xlty1p2j3" path="res://enemy/scripts/states/enemy_state_wander.gd" id="5_e2hc1"]
 [ext_resource type="Texture2D" uid="uid://fhmxe4i1tjlr" path="res://enemy/slime/sprites/DestroySmoke.png" id="7_e2hc1"]
-[ext_resource type="Script" uid="uid://dljf4af03wa1t" path="res://enemy/00scripts/states/enemy_state_stun.gd" id="8_t4vdn"]
-[ext_resource type="Script" uid="uid://bfjgno64482i" path="res://enemy/00scripts/states/enemy_state_destroy.gd" id="11_t4vdn"]
+[ext_resource type="Script" uid="uid://dljf4af03wa1t" path="res://enemy/scripts/states/enemy_state_stun.gd" id="8_t4vdn"]
+[ext_resource type="Script" uid="uid://bfjgno64482i" path="res://enemy/scripts/states/enemy_state_destroy.gd" id="11_t4vdn"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_e2hc1"]
 radius = 8.48573
