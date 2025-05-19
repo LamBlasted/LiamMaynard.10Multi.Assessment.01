@@ -2,8 +2,8 @@ extends CanvasLayer
 
 const TITLE_SCREEN : String = "res://title_scene/title_scene.tscn"
 
-@onready var button_save: Button = $Control/HBoxContainer/Save
-@onready var button_quit: Button = $Control/HBoxContainer/Quit
+@onready var button_save: Button = $VBoxContainer/Save
+@onready var button_quit: Button = $VBoxContainer/Quit
 
 var is_paused : bool = false 
 
@@ -26,8 +26,7 @@ func _unhandled_input(event: InputEvent) -> void:
 func show_pause_menu() -> void: 
 	get_tree().paused = true
 	visible = true
-	is_paused = true
-	button_save.grab_focus() 
+	is_paused = true 
 
 func hide_pause_menu() -> void:
 	get_tree().paused = false
