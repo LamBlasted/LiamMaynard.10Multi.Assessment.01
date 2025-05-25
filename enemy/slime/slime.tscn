@@ -780,6 +780,7 @@ debug_color = Color(0.78998, 0.274251, 0.233624, 0.42)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="hitbox"]
 position = Vector2(-0.104197, -6.77282)
+scale = Vector2(0.617525, 0.617525)
 shape = SubResource("CircleShape2D_e2hc1")
 debug_color = Color(0.733333, 0.541176, 0.113725, 0.494118)
 
@@ -813,7 +814,7 @@ next_state = NodePath("../Idle")
 
 [node name="Stun" type="Node" parent="EnemyStateMachine" node_paths=PackedStringArray("next_state")]
 script = ExtResource("8_t4vdn")
-knockback_speed = 100.0
+knockback_speed = 150.0
 next_state = NodePath("../Idle")
 
 [node name="Destroy" type="Node" parent="EnemyStateMachine"]
