@@ -7,6 +7,7 @@ signal hidden
 
 @onready var button_save: Button = $Control/HBoxContainer/Save
 @onready var button_quit: Button = $Control/HBoxContainer/Quit
+@onready var item_description: Label = $Control/ItemDescription
 
 var is_paused : bool = false 
 
@@ -30,13 +31,13 @@ func show_pause_menu() -> void:
 	get_tree().paused = true
 	visible = true
 	is_paused = true
-	shown.emit
+	shown.emit()
 
 func hide_pause_menu() -> void:
 	get_tree().paused = false
 	visible = false
 	is_paused = false 
-	hidden.emit
+	hidden.emit()
 
 func on_save_pressed() -> void: 
 	if is_paused == false: 
@@ -51,3 +52,6 @@ func on_quit_pressed() -> void:
 	LevelManager.load_new_level( TITLE_SCREEN, "", Vector2.ZERO)
 	hide_pause_menu()
 	pass
+
+func update_item_description( new_text : String ) -> void:
+	item_description.text = new_text

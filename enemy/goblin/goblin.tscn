@@ -816,4 +816,4 @@ libraries = {
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="VissionArea"]
 position = Vector2(0.307112, -9.52056)
-polygon = PackedVector2Array(-16, 0, 16, 0, 128, 128, -128, 128)
+polygon = PackedVector2Array(-32, 0, 32, 0, 128, 128, -128, 128)
