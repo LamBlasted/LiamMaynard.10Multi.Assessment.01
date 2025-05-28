@@ -7,6 +7,7 @@
 [ext_resource type="PackedScene" uid="uid://b044xg5vw6k4r" path="res://enemy/slime/slime.tscn" id="5_gl83w"]
 [ext_resource type="PackedScene" uid="uid://qwsj2f3v4t5n" path="res://enemy/goblin/goblin.tscn" id="6_x2be5"]
 
+
 [node name="05" type="Node2D"]
 script = ExtResource("1_rtord")
 

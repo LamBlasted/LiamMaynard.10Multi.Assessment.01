@@ -5,6 +5,7 @@
 [ext_resource type="PackedScene" uid="uid://c07302kkmfbdt" path="res://levels/level_transition.tscn" id="3_2md6y"]
 [ext_resource type="PackedScene" uid="uid://c75my0x5ohw1f" path="res://props/plants/plants.tscn" id="4_2md6y"]
 
+
 [node name="06" type="Node2D"]
 script = ExtResource("1_bbkgf")
 

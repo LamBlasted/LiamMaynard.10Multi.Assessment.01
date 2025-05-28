@@ -5,6 +5,7 @@ const TITLE_SCREEN : String = "res://title_scene/title_scene.tscn"
 signal shown
 signal hidden
 
+@onready var audio_stream_player: AudioStreamPlayer = $AudioStreamPlayer
 @onready var button_save: Button = $Control/HBoxContainer/Save
 @onready var button_quit: Button = $Control/HBoxContainer/Quit
 @onready var item_description: Label = $Control/ItemDescription
@@ -55,3 +56,8 @@ func on_quit_pressed() -> void:
 
 func update_item_description( new_text : String ) -> void:
 	item_description.text = new_text
+
+
+func play_audio( audio : AudioStream) -> void:
+	audio_stream_player.stream = audio
+	audio_stream_player.play()

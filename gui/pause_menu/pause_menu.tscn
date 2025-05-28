@@ -69,7 +69,6 @@ offset_bottom = 57.3976
 grow_vertical = 2
 size_flags_horizontal = 4
 theme_override_font_sizes/font_size = 16
-text = "A valuable gem! It must be useful for trading!"
 horizontal_alignment = 1
 autowrap_mode = 2
 
@@ -144,3 +143,6 @@ custom_minimum_size = Vector2(69, 0)
 layout_mode = 2
 text = "Quit
 "
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+max_polyphony = 4
