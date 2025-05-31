@@ -19,3 +19,10 @@ position = Vector2(0, 40)
 level = "uid://u0nbhbxdh2ci"
 target_transition_area = "LevelTransition2"
 size = 11
+
+[node name="LevelTransition2" parent="." instance=ExtResource("4_foy3d")]
+position = Vector2(448, -216)
+level = "uid://dms8ape22sk1k"
+center_player = true
+size = 4
+side = 2
