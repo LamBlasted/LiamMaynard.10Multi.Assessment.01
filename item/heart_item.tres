@@ -1,0 +1,26 @@
+[gd_resource type="Resource" script_class="ItemData" load_steps=8 format=3 uid="uid://c5b8ilsai01lj"]
+
+[ext_resource type="Script" uid="uid://ckgd4p2oymqx6" path="res://item/item_effets/item_effect.gd" id="1_34vqj"]
+[ext_resource type="AudioStream" uid="uid://b6r82y5smdgph" path="res://item/item_effets/hp-up.wav" id="2_3k17m"]
+[ext_resource type="Script" uid="uid://bjgwf0c2ms83k" path="res://item/scripts/item_data.gd" id="2_a25oq"]
+[ext_resource type="Script" uid="uid://kkrwmbdkmapc" path="res://item/item_effets/item_effect_heal_onpickup.gd" id="3_sbgv6"]
+[ext_resource type="Texture2D" uid="uid://i5fsovutihv8" path="res://gui/player_hud/gui-health.png" id="5_i7toy"]
+
+[sub_resource type="Resource" id="Resource_78s2s"]
+script = ExtResource("3_sbgv6")
+heal_amount = 1
+audio = ExtResource("2_3k17m")
+use_description = ""
+metadata/_custom_type_script = "uid://kkrwmbdkmapc"
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_i1hmd"]
+atlas = ExtResource("5_i7toy")
+region = Rect2(9, 0, 9, 8)
+
+[resource]
+script = ExtResource("2_a25oq")
+name = "Heart"
+description = ""
+texture = SubResource("AtlasTexture_i1hmd")
+effects = Array[ExtResource("1_34vqj")]([SubResource("Resource_78s2s")])
+metadata/_custom_type_script = "uid://bjgwf0c2ms83k"

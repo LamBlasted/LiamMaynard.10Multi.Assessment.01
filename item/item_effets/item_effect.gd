@@ -5,3 +5,6 @@ class_name ItemEffect extends Resource
 
 func use() -> void:
 	pass
+
+func on_pickup() -> void:
+	pass

@@ -14,12 +14,15 @@ func _ready() -> void:
 		return
 	area.body_entered.connect( _on_body_entered )
 
-func _on_body_entered( b ) -> void:
+func _on_body_entered(b) -> void:
 	if b is Player:
-			if item_data:
-				if PlayerManager.INVENTORY_DATA.add_item( item_data ) == true:
-					item_picked_up()
-	pass
+		if item_data:
+			if PlayerManager.INVENTORY_DATA.add_item(item_data) == true:
+				for effect in item_data.effects:
+					if effect.has_method("on_pickup"):
+						effect.on_pickup()
+				item_picked_up()
+
 
 func item_picked_up() -> void:
 	area.body_entered.disconnect( _on_body_entered )

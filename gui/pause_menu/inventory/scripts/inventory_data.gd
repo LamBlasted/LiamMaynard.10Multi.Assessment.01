@@ -31,5 +31,12 @@ func conncet_slots() -> void:
 			s.changed.connect( slot_changed )
 
 func slot_changed() -> void:
-	
+	for s in slots:
+		if s:
+			if s.quantity < 1: 
+				s.changed.disconnect( slot_changed )
+				var index = slots.find( s )
+				slots[ index ] = null
+				emit_changed()
+				
 	pass
