@@ -1,6 +1,6 @@
 extends Node2D
 
-const START_LEVEL : String = "res://levels/area01/01.tscn"
+const START_LEVEL : String = "res://levels/area01/scenes/01.tscn"
 
 @onready var button_new: Button = $CanvasLayer/Control/New
 @onready var button_quit: Button = $CanvasLayer/Control/Quit

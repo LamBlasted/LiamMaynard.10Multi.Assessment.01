@@ -18,6 +18,12 @@ target_transition_area = "LevelTransition2"
 size = 6
 side = 2
 
+[node name="LevelTransition2" parent="." instance=ExtResource("3_2md6y")]
+position = Vector2(400, 136)
+level = "uid://u0nbhbxdh2ci"
+size = 3
+side = 1
+
 [node name="plants" parent="." instance=ExtResource("4_2md6y")]
 position = Vector2(248, 56)
 

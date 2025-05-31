@@ -6,7 +6,7 @@
 [ext_resource type="Script" uid="uid://kkrwmbdkmapc" path="res://item/item_effets/item_effect_heal_onpickup.gd" id="3_sbgv6"]
 [ext_resource type="Texture2D" uid="uid://dcvsmqhjvidcn" path="res://item/sprites/heart_consumable.png" id="5_3k17m"]
 
-[sub_resource type="Resource" id="Resource_78s2s"]
+[sub_resource type="Resource" id="Resource_3k17m"]
 script = ExtResource("3_sbgv6")
 heal_amount = 1
 audio = ExtResource("2_3k17m")
@@ -22,6 +22,6 @@ script = ExtResource("2_a25oq")
 name = "Heart"
 description = ""
 texture = SubResource("AtlasTexture_sbgv6")
-effects = Array[ExtResource("1_34vqj")]([SubResource("Resource_78s2s")])
-consume_on_pickup = false
+effects = Array[ExtResource("1_34vqj")]([SubResource("Resource_3k17m")])
+consume_on_pickup = true
 metadata/_custom_type_script = "uid://bjgwf0c2ms83k"
