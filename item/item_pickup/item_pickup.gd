@@ -17,11 +17,15 @@ func _ready() -> void:
 func _on_body_entered(b) -> void:
 	if b is Player:
 		if item_data:
-			if PlayerManager.INVENTORY_DATA.add_item(item_data) == true:
+			if item_data.consume_on_pickup:
 				for effect in item_data.effects:
 					if effect.has_method("on_pickup"):
 						effect.on_pickup()
 				item_picked_up()
+			else:
+				if PlayerManager.INVENTORY_DATA.add_item(item_data) == true:
+					item_picked_up()
+
 
 
 func item_picked_up() -> void:

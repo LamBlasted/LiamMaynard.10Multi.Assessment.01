@@ -6,6 +6,7 @@ class_name ItemData extends Resource
 
 @export_category("Item Use Effects")
 @export var effects : Array[ ItemEffect ]
+@export var consume_on_pickup: bool = false
 
 func use() -> bool:
 	if effects.size() == 0:
