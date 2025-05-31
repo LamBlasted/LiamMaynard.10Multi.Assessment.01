@@ -14,4 +14,5 @@ name = "Gem"
 description = "A valuable gem! It must be useful for trading!"
 texture = SubResource("AtlasTexture_f83os")
 effects = Array[ExtResource("1_f83os")]([])
+consume_on_pickup = false
 metadata/_custom_type_script = "uid://bjgwf0c2ms83k"
