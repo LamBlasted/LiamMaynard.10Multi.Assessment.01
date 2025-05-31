@@ -4,7 +4,7 @@ class_name InventoryData extends Resource
 
 
 func _init() -> void:
-	conncet_slots()
+	connect_slots()
 	pass
 
 func add_item( item: ItemData, count : int = 1 ) -> bool: 
@@ -25,7 +25,7 @@ func add_item( item: ItemData, count : int = 1 ) -> bool:
 	
 	return false
 
-func conncet_slots() -> void:
+func connect_slots() -> void:
 	for s in slots:
 		if s:
 			s.changed.connect( slot_changed )

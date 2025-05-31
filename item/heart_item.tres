@@ -23,5 +23,5 @@ name = "Heart"
 description = ""
 texture = SubResource("AtlasTexture_sbgv6")
 effects = Array[ExtResource("1_34vqj")]([SubResource("Resource_78s2s")])
-consume_on_pickup = true
+consume_on_pickup = false
 metadata/_custom_type_script = "uid://bjgwf0c2ms83k"
