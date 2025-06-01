@@ -1,10 +1,11 @@
-[gd_scene load_steps=6 format=4 uid="uid://8cf1he2h0shb"]
+[gd_scene load_steps=7 format=4 uid="uid://8cf1he2h0shb"]
 
 [ext_resource type="PackedScene" uid="uid://cg1jhhvwm5br6" path="res://tilemaps/grass_01.tscn" id="1_a1gxs"]
 [ext_resource type="Script" uid="uid://doen0mrjhm1jg" path="res://levels/scripts/levels.gd" id="1_onu17"]
 [ext_resource type="PackedScene" uid="uid://c75my0x5ohw1f" path="res://props/plants/plants.tscn" id="2_iwepj"]
 [ext_resource type="PackedScene" uid="uid://b044xg5vw6k4r" path="res://enemy/slime/slime.tscn" id="3_qsp5h"]
 [ext_resource type="PackedScene" uid="uid://c07302kkmfbdt" path="res://levels/level_transition.tscn" id="4_8v06e"]
+[ext_resource type="PackedScene" uid="uid://batfy3rgoda0a" path="res://utility/persistent_data_handler/persistent_data_handler.tscn" id="6_kt22s"]
 
 [node name="02" type="Node2D"]
 script = ExtResource("1_onu17")
@@ -82,6 +83,8 @@ position = Vector2(545, 22)
 
 [node name="plants14" parent="." instance=ExtResource("2_iwepj")]
 position = Vector2(545, 35)
+
+[node name="PersistentDataHandler" parent="plants14" instance=ExtResource("6_kt22s")]
 
 [node name="plants15" parent="." instance=ExtResource("2_iwepj")]
 position = Vector2(545, 54)

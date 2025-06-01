@@ -1,6 +1,6 @@
-[gd_scene load_steps=7 format=3 uid="uid://o08r1s4d32ai"]
+[gd_scene load_steps=7 format=3 uid="uid://bgl0au3joket2"]
 
-[ext_resource type="Script" uid="uid://ctgbtdwa061mh" path="res://gui/scene_transition/scene_transition.gd" id="1_yvyfr"]
+[ext_resource type="Script" uid="uid://ctgbtdwa061mh" path="res://gui/scene_transition/scene_transition.gd" id="1_1ocwm"]
 
 [sub_resource type="Animation" id="Animation_jxmsx"]
 length = 0.001
@@ -76,7 +76,7 @@ _data = {
 
 [node name="SceneTransition" type="CanvasLayer"]
 process_mode = 3
-script = ExtResource("1_yvyfr")
+script = ExtResource("1_1ocwm")
 
 [node name="Control" type="Control" parent="."]
 layout_mode = 3

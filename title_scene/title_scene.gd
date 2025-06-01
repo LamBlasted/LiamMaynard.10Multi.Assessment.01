@@ -1,6 +1,7 @@
 extends Node2D
 
 const START_LEVEL : String = "res://levels/area01/scenes/01.tscn"
+const INVENTORY_UI : String = "res://gui/pause_menu/inventory/scripts/inventory_ui.gd"
 
 @onready var button_new: Button = $CanvasLayer/Control/New
 @onready var button_quit: Button = $CanvasLayer/Control/Quit
@@ -37,6 +38,7 @@ func setup_title_scene() -> void:
 
 func start_game() -> void: 
 	LevelManager.load_new_level( START_LEVEL, "", Vector2.ZERO )
+	
 	pass
 
 func load_game() -> void:

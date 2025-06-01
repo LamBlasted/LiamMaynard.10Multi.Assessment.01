@@ -1,10 +1,12 @@
-[gd_scene load_steps=6 format=4 uid="uid://dlthdo2uhbh5w"]
+[gd_scene load_steps=8 format=4 uid="uid://dlthdo2uhbh5w"]
 
 [ext_resource type="Script" uid="uid://doen0mrjhm1jg" path="res://levels/scripts/levels.gd" id="1_tvcn7"]
 [ext_resource type="PackedScene" uid="uid://c07302kkmfbdt" path="res://levels/level_transition.tscn" id="2_ds4ax"]
 [ext_resource type="PackedScene" uid="uid://cg1jhhvwm5br6" path="res://tilemaps/grass_01.tscn" id="3_um7d3"]
 [ext_resource type="PackedScene" uid="uid://qwsj2f3v4t5n" path="res://enemy/goblin/goblin.tscn" id="4_um7d3"]
 [ext_resource type="PackedScene" uid="uid://b044xg5vw6k4r" path="res://enemy/slime/slime.tscn" id="5_6wb3j"]
+[ext_resource type="PackedScene" uid="uid://b1eimaf2lymme" path="res://interactables/chest/chest.tscn" id="6_6wb3j"]
+[ext_resource type="Resource" uid="uid://4ept5ucffj42" path="res://item/potion.tres" id="7_jlhkc"]
 
 [node name="01" type="Node2D"]
 script = ExtResource("1_tvcn7")
@@ -29,3 +31,8 @@ position = Vector2(120, 184)
 
 [node name="slime2" parent="." instance=ExtResource("5_6wb3j")]
 position = Vector2(232, 80)
+
+[node name="Chest" parent="." instance=ExtResource("6_6wb3j")]
+position = Vector2(197, 115)
+item_data = ExtResource("7_jlhkc")
+quantity = 3

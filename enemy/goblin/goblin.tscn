@@ -638,7 +638,7 @@ metadata/_custom_type_script = "uid://dhf8d0jcsvd4t"
 [sub_resource type="Resource" id="Resource_krk8o"]
 script = ExtResource("12_blb3t")
 item = ExtResource("15_n5c0c")
-probability = 25.0
+probability = 15.0
 min_amount = 1
 max_amount = 1
 metadata/_custom_type_script = "uid://dhf8d0jcsvd4t"

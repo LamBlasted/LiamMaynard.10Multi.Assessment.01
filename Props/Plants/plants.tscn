@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://c75my0x5ohw1f"]
+[gd_scene load_steps=12 format=3 uid="uid://c75my0x5ohw1f"]
 
 [ext_resource type="Script" uid="uid://bbyjhl6hxvbtw" path="res://props/plants/plants.gd" id="1_7rmsj"]
 [ext_resource type="Texture2D" uid="uid://b8v05sojp8wo6" path="res://props/sprites/props.png" id="1_uxh5u"]
@@ -6,6 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://d2flx7ysgtb51" path="res://utility/hitbox/hitbox.tscn" id="2_7rmsj"]
 [ext_resource type="Resource" uid="uid://yhsp5guo1otw" path="res://item/gem.tres" id="3_m4vcu"]
 [ext_resource type="Resource" uid="uid://c5b8ilsai01lj" path="res://item/heart_item.tres" id="4_m4vcu"]
+[ext_resource type="PackedScene" uid="uid://batfy3rgoda0a" path="res://utility/persistent_data_handler/persistent_data_handler.tscn" id="7_f0ikm"]
 
 [sub_resource type="Resource" id="Resource_0woj6"]
 script = ExtResource("2_0woj6")
@@ -54,3 +55,5 @@ collision_mask = 0
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
 position = Vector2(0, 9)
 shape = SubResource("RectangleShape2D_byons")
+
+[node name="PersistentDataPlantDestoyed" parent="." instance=ExtResource("7_f0ikm")]
