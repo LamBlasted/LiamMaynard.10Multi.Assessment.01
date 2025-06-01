@@ -1,18 +1,31 @@
-[gd_scene load_steps=4 format=3 uid="uid://gsgpp115jom3"]
+[gd_scene load_steps=5 format=3 uid="uid://gsgpp115jom3"]
 
 [ext_resource type="Script" uid="uid://bldblr06e0nea" path="res://item/item_pickup/item_pickup.gd" id="1_jam0u"]
+[ext_resource type="Texture2D" uid="uid://dlpr7t3pr7yd" path="res://item/sprites/Shadow (1).png" id="2_gv030"]
 [ext_resource type="AudioStream" uid="uid://bhyv4xwb3dju8" path="res://item/item_pickup/item_pickup.wav" id="2_u7veq"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_u7veq"]
 
-[node name="ItemPickup" type="Node2D"]
+[node name="ItemPickup" type="CharacterBody2D"]
 scale = Vector2(0.6, 0.6)
+collision_layer = 0
+collision_mask = 16
+motion_mode = 1
 script = ExtResource("1_jam0u")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_u7veq")
 
 [node name="Area2D" type="Area2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
 shape = SubResource("CircleShape2D_u7veq")
+
+[node name="ShadowSprite2D" type="Sprite2D" parent="."]
+modulate = Color(0, 0, 0, 0.564706)
+position = Vector2(-0.105066, 7.1354)
+scale = Vector2(0.5, 0.471)
+texture = ExtResource("2_gv030")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 

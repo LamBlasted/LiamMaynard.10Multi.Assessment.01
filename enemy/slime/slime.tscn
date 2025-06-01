@@ -1,4 +1,4 @@
-[gd_scene load_steps=35 format=3 uid="uid://b044xg5vw6k4r"]
+[gd_scene load_steps=40 format=3 uid="uid://b044xg5vw6k4r"]
 
 [ext_resource type="Script" uid="uid://dopm74p4ddu82" path="res://enemy/00scripts/enemy.gd" id="1_afspt"]
 [ext_resource type="Texture2D" uid="uid://baq1felqa3kyv" path="res://enemy/slime/sprites/slime_sprite_sheet.png" id="1_ci0n5"]
@@ -12,6 +12,9 @@
 [ext_resource type="Texture2D" uid="uid://fhmxe4i1tjlr" path="res://enemy/slime/sprites/DestroySmoke.png" id="7_e2hc1"]
 [ext_resource type="Script" uid="uid://dljf4af03wa1t" path="res://enemy/00scripts/states/enemy_state_stun.gd" id="8_t4vdn"]
 [ext_resource type="Script" uid="uid://bfjgno64482i" path="res://enemy/00scripts/states/enemy_state_destroy.gd" id="11_t4vdn"]
+[ext_resource type="Script" uid="uid://dhf8d0jcsvd4t" path="res://enemy/00scripts/drop_data.gd" id="12_yndxk"]
+[ext_resource type="Resource" uid="uid://yhsp5guo1otw" path="res://item/gem.tres" id="13_fq6cl"]
+[ext_resource type="Resource" uid="uid://c5b8ilsai01lj" path="res://item/heart_item.tres" id="14_fq6cl"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_e2hc1"]
 radius = 8.48573
@@ -664,6 +667,22 @@ _data = {
 &"walk_up": SubResource("Animation_e2hc1")
 }
 
+[sub_resource type="Resource" id="Resource_kkakc"]
+script = ExtResource("12_yndxk")
+item = ExtResource("13_fq6cl")
+probability = 100.0
+min_amount = 1
+max_amount = 3
+metadata/_custom_type_script = "uid://dhf8d0jcsvd4t"
+
+[sub_resource type="Resource" id="Resource_06o50"]
+script = ExtResource("12_yndxk")
+item = ExtResource("14_fq6cl")
+probability = 35.0
+min_amount = 1
+max_amount = 1
+metadata/_custom_type_script = "uid://dhf8d0jcsvd4t"
+
 [sub_resource type="Animation" id="Animation_hmkxq"]
 length = 0.001
 tracks/0/type = "value"
@@ -819,6 +838,7 @@ next_state = NodePath("../Idle")
 
 [node name="Destroy" type="Node" parent="EnemyStateMachine"]
 script = ExtResource("11_t4vdn")
+drops = Array[ExtResource("12_yndxk")]([SubResource("Resource_kkakc"), SubResource("Resource_06o50")])
 
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
 

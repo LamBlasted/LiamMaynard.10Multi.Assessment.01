@@ -1,4 +1,4 @@
-[gd_scene load_steps=40 format=3 uid="uid://qwsj2f3v4t5n"]
+[gd_scene load_steps=47 format=3 uid="uid://qwsj2f3v4t5n"]
 
 [ext_resource type="Script" uid="uid://dopm74p4ddu82" path="res://enemy/00scripts/enemy.gd" id="1_pmh53"]
 [ext_resource type="PackedScene" uid="uid://dc3twq78b6toi" path="res://utility/hurtbox/hurtbox.tscn" id="2_il2au"]
@@ -12,8 +12,12 @@
 [ext_resource type="Script" uid="uid://dljf4af03wa1t" path="res://enemy/00scripts/states/enemy_state_stun.gd" id="10_5ml7j"]
 [ext_resource type="Script" uid="uid://bfjgno64482i" path="res://enemy/00scripts/states/enemy_state_destroy.gd" id="11_ji4du"]
 [ext_resource type="Texture2D" uid="uid://fhmxe4i1tjlr" path="res://enemy/slime/sprites/DestroySmoke.png" id="12_2n4ff"]
+[ext_resource type="Script" uid="uid://dhf8d0jcsvd4t" path="res://enemy/00scripts/drop_data.gd" id="12_blb3t"]
 [ext_resource type="Script" uid="uid://c6xwiaola6525" path="res://enemy/00scripts/states/enemy_state_chase.gd" id="12_cfvsp"]
 [ext_resource type="PackedScene" uid="uid://garvixkbq75y" path="res://enemy/vission_area.tscn" id="13_q80rs"]
+[ext_resource type="Resource" uid="uid://yhsp5guo1otw" path="res://item/gem.tres" id="13_vm8l1"]
+[ext_resource type="Resource" uid="uid://c5b8ilsai01lj" path="res://item/heart_item.tres" id="14_opafa"]
+[ext_resource type="Resource" uid="uid://4ept5ucffj42" path="res://item/potion.tres" id="15_n5c0c"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_e2hc1"]
 radius = 8.48573
@@ -615,6 +619,30 @@ _data = {
 &"walk_up": SubResource("Animation_q80rs")
 }
 
+[sub_resource type="Resource" id="Resource_1va4w"]
+script = ExtResource("12_blb3t")
+item = ExtResource("13_vm8l1")
+probability = 100.0
+min_amount = 2
+max_amount = 4
+metadata/_custom_type_script = "uid://dhf8d0jcsvd4t"
+
+[sub_resource type="Resource" id="Resource_r7y1x"]
+script = ExtResource("12_blb3t")
+item = ExtResource("14_opafa")
+probability = 60.0
+min_amount = 1
+max_amount = 1
+metadata/_custom_type_script = "uid://dhf8d0jcsvd4t"
+
+[sub_resource type="Resource" id="Resource_krk8o"]
+script = ExtResource("12_blb3t")
+item = ExtResource("15_n5c0c")
+probability = 25.0
+min_amount = 1
+max_amount = 1
+metadata/_custom_type_script = "uid://dhf8d0jcsvd4t"
+
 [sub_resource type="Animation" id="Animation_hmkxq"]
 length = 0.001
 tracks/0/type = "value"
@@ -787,6 +815,7 @@ next_state = NodePath("../Chase")
 
 [node name="Destroy" type="Node" parent="EnemyStateMachine"]
 script = ExtResource("11_ji4du")
+drops = Array[ExtResource("12_blb3t")]([SubResource("Resource_1va4w"), SubResource("Resource_r7y1x"), SubResource("Resource_krk8o")])
 
 [node name="Chase" type="Node" parent="EnemyStateMachine" node_paths=PackedStringArray("next_state", "vission_area", "attack_area")]
 script = ExtResource("12_cfvsp")
