@@ -1,19 +1,20 @@
-[gd_scene load_steps=42 format=3 uid="uid://csqtruncs401c"]
+[gd_scene load_steps=44 format=3 uid="uid://csqtruncs401c"]
 
 [ext_resource type="Script" uid="uid://bafkf7hq45dkq" path="res://player/scripts/player.gd" id="1_rkbax"]
 [ext_resource type="Texture2D" uid="uid://b5qtk4oocdu3o" path="res://player/sprites/04player_sprite_sheet.png" id="2_2ieo8"]
-[ext_resource type="Texture2D" uid="uid://xvfjh0q411ic" path="res://player/sprites/AttackSprite01.png" id="3_boad6"]
+[ext_resource type="Texture2D" uid="uid://xvfjh0q411ic" path="res://player/sprites/attacksprite01.png" id="3_boad6"]
 [ext_resource type="Script" uid="uid://vk65qxvuknl0" path="res://player/scripts/states/player_state_machine.gd" id="3_g1dw6"]
 [ext_resource type="Script" uid="uid://blro5rdhclucp" path="res://player/scripts/states/state_idle.gd" id="4_yw30f"]
 [ext_resource type="PackedScene" uid="uid://d2flx7ysgtb51" path="res://utility/hitbox/hitbox.tscn" id="5_2ieo8"]
 [ext_resource type="Script" uid="uid://bvtvdn1ti4wl3" path="res://player/scripts/player_camera.gd" id="5_8t03j"]
 [ext_resource type="Script" uid="uid://btayqp5copmp6" path="res://player/scripts/states/state_run.gd" id="5_qjkh3"]
 [ext_resource type="Script" uid="uid://d2s16nrem4gs2" path="res://player/scripts/states/state_attack.gd" id="6_g6k8r"]
-[ext_resource type="AudioStream" uid="uid://dwi7j6lbfbbdq" path="res://player/audio/SwordSwoosh.wav" id="8_rgyib"]
+[ext_resource type="AudioStream" uid="uid://dwi7j6lbfbbdq" path="res://player/audio/swordswoosh.wav" id="8_rgyib"]
 [ext_resource type="PackedScene" uid="uid://dc3twq78b6toi" path="res://utility/hurtbox/hurtbox.tscn" id="9_hg6s5"]
 [ext_resource type="AudioStream" uid="uid://bkby1oilovk5y" path="res://player/audio/hit_player.wav" id="12_ebec5"]
 [ext_resource type="Script" uid="uid://vt2o3cemaexk" path="res://player/scripts/player_interactions_host.gd" id="12_kb6p2"]
 [ext_resource type="Script" uid="uid://d2ddgyaaf40dx" path="res://player/scripts/states/state_stun.gd" id="12_yllr7"]
+[ext_resource type="Script" uid="uid://wws1loa5rxxw" path="res://player/scripts/push_area.gd" id="13_wodsf"]
 
 [sub_resource type="Animation" id="Animation_ebec5"]
 length = 0.001
@@ -720,6 +721,9 @@ _data = {
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_yllr7"]
 size = Vector2(15, 15)
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_32hag"]
+size = Vector2(15, 10.8469)
+
 [sub_resource type="Animation" id="Animation_tqiix"]
 length = 0.001
 tracks/0/type = "value"
@@ -876,6 +880,18 @@ monitoring = false
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Interactions/Area2D"]
 shape = SubResource("RectangleShape2D_yllr7")
 debug_color = Color(0.839267, 6.94045e-05, 0.655836, 0.42)
+
+[node name="PushArea" type="Area2D" parent="Interactions"]
+position = Vector2(0, 5)
+collision_layer = 0
+collision_mask = 16
+monitorable = false
+script = ExtResource("13_wodsf")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Interactions/PushArea"]
+position = Vector2(0, -2.07653)
+shape = SubResource("RectangleShape2D_32hag")
+debug_color = Color(1.58831e-06, 0.586596, 0.315553, 0.42)
 
 [node name="hitbox" parent="." instance=ExtResource("5_2ieo8")]
 position = Vector2(8.9407e-08, -3.23867)

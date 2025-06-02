@@ -43,4 +43,4 @@ func check_is_activated() -> void:
 
 func play_audio( _stream: AudioStream ) -> void:
 	audio.stream = _stream
-	audio.play
+	audio.play()
