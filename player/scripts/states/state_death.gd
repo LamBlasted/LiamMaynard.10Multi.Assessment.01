@@ -13,8 +13,7 @@ func init() -> void:
 
 ## What happens when the player enters this State?
 func enter() -> void:
-	print("ENTERED DEATH STATE")
-	player.animation_player.play("death")
+	player.UpdateAnimation("death")
 	audio.stream = death_audio
 	audio.play()
 	PlayerHud.show_game_over_screen()
