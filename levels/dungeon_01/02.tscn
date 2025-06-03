@@ -1,9 +1,10 @@
-[gd_scene load_steps=5 format=4 uid="uid://ndcmn8yga85i"]
+[gd_scene load_steps=6 format=4 uid="uid://ndcmn8yga85i"]
 
 [ext_resource type="Script" uid="uid://doen0mrjhm1jg" path="res://levels/scripts/levels.gd" id="1_6jfx3"]
 [ext_resource type="PackedScene" uid="uid://k43idbxlj6xt" path="res://tilemaps/dungeon_01_tilemap.tscn" id="2_sg736"]
 [ext_resource type="PackedScene" uid="uid://chdp6jax35rjs" path="res://levels/player_spawn.tscn" id="4_d060r"]
 [ext_resource type="PackedScene" uid="uid://c07302kkmfbdt" path="res://levels/level_transition.tscn" id="4_mp80t"]
+[ext_resource type="PackedScene" uid="uid://bky2lnqo8kc54" path="res://interactables/dungeon/locked_door.tscn" id="5_1f5gs"]
 
 [node name="02" type="Node2D"]
 script = ExtResource("1_6jfx3")
@@ -20,5 +21,20 @@ center_player = true
 size = 3
 side = 3
 
+[node name="LevelTransition2" parent="." instance=ExtResource("4_mp80t")]
+position = Vector2(400, 56)
+center_player = true
+size = 3
+side = 1
+
+[node name="LevelTransition3" parent="." instance=ExtResource("4_mp80t")]
+position = Vector2(192, -72)
+center_player = true
+size = 3
+side = 2
+
 [node name="PlayerSpawn" parent="." instance=ExtResource("4_d060r")]
 position = Vector2(184, 112)
+
+[node name="LockedDoor" parent="." instance=ExtResource("5_1f5gs")]
+position = Vector2(192, -54)

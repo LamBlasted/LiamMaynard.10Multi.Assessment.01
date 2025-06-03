@@ -1,12 +1,18 @@
-[gd_resource type="Resource" script_class="ItemData" load_steps=3 format=3 uid="uid://jpwkviu1y060"]
+[gd_resource type="Resource" script_class="ItemData" load_steps=5 format=3 uid="uid://jpwkviu1y060"]
 
 [ext_resource type="Script" uid="uid://ckgd4p2oymqx6" path="res://item/item_effets/item_effect.gd" id="1_uk1vs"]
 [ext_resource type="Script" uid="uid://bjgwf0c2ms83k" path="res://item/scripts/item_data.gd" id="2_1dtyr"]
+[ext_resource type="Texture2D" uid="uid://dh1jmsw1ijirc" path="res://item/sprites/items.png" id="3_1dtyr"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_13dof"]
+atlas = ExtResource("3_1dtyr")
+region = Rect2(224, 0, 32, 32)
 
 [resource]
 script = ExtResource("2_1dtyr")
 name = "Dungeon Key"
 description = "This key emits a mysterious aura. What could it lead too?"
+texture = SubResource("AtlasTexture_13dof")
 effects = Array[ExtResource("1_uk1vs")]([])
 consume_on_pickup = false
 metadata/_custom_type_script = "uid://bjgwf0c2ms83k"

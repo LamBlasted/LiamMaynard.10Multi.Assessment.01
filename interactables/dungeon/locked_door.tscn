@@ -1,0 +1,62 @@
+[gd_scene load_steps=11 format=3 uid="uid://bky2lnqo8kc54"]
+
+[ext_resource type="Texture2D" uid="uid://dkp35hbppuj2e" path="res://interactables/dungeon/dungeon_props.png" id="1_onbon"]
+[ext_resource type="Resource" uid="uid://jpwkviu1y060" path="res://item/key_dungeon.tres" id="2_fy1mf"]
+[ext_resource type="PackedScene" uid="uid://batfy3rgoda0a" path="res://utility/persistent_data_handler/persistent_data_handler.tscn" id="2_n53nc"]
+[ext_resource type="Script" uid="uid://bmf42oo570sad" path="res://interactables/dungeon/scripts/locked_door.gd" id="3_xbbsa"]
+[ext_resource type="AudioStream" uid="uid://b7i5dnxr205tm" path="res://interactables/dungeon/audio/locked_door.wav" id="3_y44bh"]
+[ext_resource type="AudioStream" uid="uid://wga40ev3jtjs" path="res://interactables/dungeon/audio/unlock_door.wav" id="4_3j3fx"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_n53nc"]
+size = Vector2(64, 61)
+
+[sub_resource type="Animation" id="Animation_xbbsa"]
+resource_name = "closed"
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_g7ci3"]
+_data = {
+&"closed": SubResource("Animation_xbbsa")
+}
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_xbbsa"]
+size = Vector2(32, 20)
+
+[node name="LockedDoor" type="Node2D"]
+script = ExtResource("3_xbbsa")
+key_item = ExtResource("2_fy1mf")
+locked_audio = ExtResource("3_y44bh")
+open_audio = ExtResource("4_3j3fx")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(0, -42)
+texture = ExtResource("1_onbon")
+hframes = 7
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+collision_layer = 16
+collision_mask = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(0, -30.5)
+shape = SubResource("RectangleShape2D_n53nc")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="StaticBody2D"]
+root_node = NodePath("../..")
+libraries = {
+&"": SubResource("AnimationLibrary_g7ci3")
+}
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="StaticBody2D"]
+max_polyphony = 2
+
+[node name="PersistentDataHandler" parent="." instance=ExtResource("2_n53nc")]
+
+[node name="InteractArea" type="Area2D" parent="."]
+collision_layer = 0
+collision_mask = 4
+monitorable = false
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="InteractArea"]
+position = Vector2(0, -9)
+shape = SubResource("RectangleShape2D_xbbsa")
+debug_color = Color(0.636675, 0.577647, 0, 0.42)
