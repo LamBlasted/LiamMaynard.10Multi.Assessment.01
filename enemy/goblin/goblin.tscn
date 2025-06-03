@@ -747,6 +747,7 @@ _data = {
 scale = Vector2(0.8, 0.8)
 collision_layer = 0
 collision_mask = 272
+motion_mode = 1
 script = ExtResource("1_pmh53")
 hp = 4
 

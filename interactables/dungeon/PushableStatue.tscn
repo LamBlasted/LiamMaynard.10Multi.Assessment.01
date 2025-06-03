@@ -4,7 +4,6 @@
 [ext_resource type="Texture2D" uid="uid://dkp35hbppuj2e" path="res://interactables/dungeon/dungeon_props.png" id="2_dw6sa"]
 [ext_resource type="AudioStream" uid="uid://d3bnsfbnooc5s" path="res://interactables/dungeon/audio/push_stone.wav" id="3_rnxec"]
 
-
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_dw6sa"]
 size = Vector2(30, 12)
 

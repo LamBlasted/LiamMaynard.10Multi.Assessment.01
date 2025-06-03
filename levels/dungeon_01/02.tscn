@@ -23,15 +23,22 @@ side = 3
 
 [node name="LevelTransition2" parent="." instance=ExtResource("4_mp80t")]
 position = Vector2(400, 56)
+level = "uid://xeveawlw5wx4"
 center_player = true
 size = 3
 side = 1
 
 [node name="LevelTransition3" parent="." instance=ExtResource("4_mp80t")]
 position = Vector2(192, -72)
+level = "uid://dip0yu4xajp8i"
 center_player = true
 size = 3
 side = 2
+
+[node name="LevelTransition4" parent="." instance=ExtResource("4_mp80t")]
+position = Vector2(-16, 56)
+center_player = true
+size = 3
 
 [node name="PlayerSpawn" parent="." instance=ExtResource("4_d060r")]
 position = Vector2(184, 112)
