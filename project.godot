@@ -31,6 +31,7 @@ BossBar="*res://gui/boss_bar/boss_bar.tscn"
 
 window/size/viewport_width=320
 window/size/viewport_height=180
+window/size/mode=4
 window/size/window_width_override=1280
 window/size/window_height_override=720
 window/stretch/mode="viewport"
@@ -93,4 +94,6 @@ test={
 [rendering]
 
 textures/canvas_textures/default_texture_filter=0
+textures/vram_compression/import_s3tc_bptc=true
+textures/vram_compression/import_etc2_astc=true
 2d/snap/snap_2d_transforms_to_pixel=true
