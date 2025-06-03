@@ -1,10 +1,14 @@
-[gd_scene load_steps=6 format=4 uid="uid://ndcmn8yga85i"]
+[gd_scene load_steps=8 format=4 uid="uid://ndcmn8yga85i"]
 
 [ext_resource type="Script" uid="uid://doen0mrjhm1jg" path="res://levels/scripts/levels.gd" id="1_6jfx3"]
 [ext_resource type="PackedScene" uid="uid://k43idbxlj6xt" path="res://tilemaps/dungeon_01_tilemap.tscn" id="2_sg736"]
 [ext_resource type="PackedScene" uid="uid://chdp6jax35rjs" path="res://levels/player_spawn.tscn" id="4_d060r"]
 [ext_resource type="PackedScene" uid="uid://c07302kkmfbdt" path="res://levels/level_transition.tscn" id="4_mp80t"]
 [ext_resource type="PackedScene" uid="uid://bky2lnqo8kc54" path="res://interactables/dungeon/locked_door.tscn" id="5_1f5gs"]
+[ext_resource type="Script" uid="uid://bwnion1y16yok" path="res://levels/dungeon_01/saveing_before_boss.gd" id="6_ghfwl"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_1f5gs"]
+size = Vector2(48, 20)
 
 [node name="02" type="Node2D"]
 script = ExtResource("1_6jfx3")
@@ -23,7 +27,7 @@ side = 3
 
 [node name="LevelTransition2" parent="." instance=ExtResource("4_mp80t")]
 position = Vector2(401, 56)
-level = "uid://clu7krofwdyx6"
+level = "uid://xeveawlw5wx4"
 center_player = true
 size = 3
 side = 1
@@ -40,3 +44,12 @@ position = Vector2(184, 112)
 
 [node name="LockedDoor" parent="." instance=ExtResource("5_1f5gs")]
 position = Vector2(192, -54)
+
+[node name="saveing before boss" type="Area2D" parent="."]
+position = Vector2(192, -64)
+script = ExtResource("6_ghfwl")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="saveing before boss"]
+shape = SubResource("RectangleShape2D_1f5gs")
+
+[connection signal="body_entered" from="saveing before boss" to="saveing before boss" method="_on_body_entered"]

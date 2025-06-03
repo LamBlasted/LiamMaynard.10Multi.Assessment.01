@@ -23,6 +23,7 @@ func Process( _delta: float ) -> State:
 	player.velocity = Vector2.ZERO
 	return null
 
+
 # What happens with the input event in this State?
 func HandleInput( _event: InputEvent ) -> State:
 	if _event.is_action_pressed("attack"):

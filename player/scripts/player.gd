@@ -85,9 +85,7 @@ func _take_damage( hurt_box : HurtBox ) -> void:
 	if hp > 0:
 		update_hp( -hurt_box.damage )
 		PlayerDamaged.emit( hurt_box )
-
 	pass
-
 
 
 func update_hp( delta: int ) -> void : 
@@ -95,12 +93,6 @@ func update_hp( delta: int ) -> void :
 	PlayerHud.update_hp( hp, max_hp )
 	
 	
-	
-	if hp <= 0 : 
-		print("HP is 0, entering death state")
-		state_machine.ChangeState(state_machine.get_node("Death"))
-	pass 
-
 func make_invulnerable(_duration : float = 1.0 ) -> void:
 	invulnerable = true
 	hit_box.monitoring = false
@@ -110,3 +102,9 @@ func make_invulnerable(_duration : float = 1.0 ) -> void:
 	invulnerable = false
 	hit_box.monitoring = true
 	pass
+
+
+func revive_player() -> void:
+	update_hp( 99 )
+	state_machine.ChangeState(  $PlayerStateMachine/Idle )
+	PlayerManager.player.animation_player.play( "revive" )

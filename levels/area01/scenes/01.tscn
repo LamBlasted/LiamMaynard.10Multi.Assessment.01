@@ -1,9 +1,13 @@
-[gd_scene load_steps=5 format=4 uid="uid://b87tkkjtf7ul7"]
+[gd_scene load_steps=7 format=4 uid="uid://b87tkkjtf7ul7"]
 
 [ext_resource type="Script" uid="uid://doen0mrjhm1jg" path="res://levels/scripts/levels.gd" id="1_fl0jm"]
 [ext_resource type="PackedScene" uid="uid://cg1jhhvwm5br6" path="res://tilemaps/grass_01.tscn" id="1_xlvri"]
 [ext_resource type="PackedScene" uid="uid://chdp6jax35rjs" path="res://levels/player_spawn.tscn" id="2_sqbdx"]
 [ext_resource type="PackedScene" uid="uid://c07302kkmfbdt" path="res://levels/level_transition.tscn" id="3_l2ak3"]
+[ext_resource type="Script" uid="uid://dw4ks6e135ldu" path="res://levels/area01/scenes/area_2d.gd" id="5_7b12h"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_gsmte"]
+size = Vector2(240, 188)
 
 [node name="01" type="Node2D"]
 script = ExtResource("1_fl0jm")
@@ -19,3 +23,13 @@ position = Vector2(368, 104)
 level = "uid://8cf1he2h0shb"
 size = 4
 side = 1
+
+[node name="Area2D" type="Area2D" parent="."]
+position = Vector2(170, 90)
+script = ExtResource("5_7b12h")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(-4, 20)
+shape = SubResource("RectangleShape2D_gsmte")
+
+[connection signal="body_entered" from="Area2D" to="Area2D" method="_on_body_entered"]

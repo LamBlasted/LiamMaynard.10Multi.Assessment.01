@@ -1,12 +1,14 @@
-[gd_scene load_steps=8 format=4 uid="uid://xeveawlw5wx4"]
+[gd_scene load_steps=10 format=4 uid="uid://xeveawlw5wx4"]
 
 [ext_resource type="Script" uid="uid://doen0mrjhm1jg" path="res://levels/scripts/levels.gd" id="1_7116r"]
 [ext_resource type="PackedScene" uid="uid://k43idbxlj6xt" path="res://tilemaps/dungeon_01_tilemap.tscn" id="2_v1lkg"]
 [ext_resource type="PackedScene" uid="uid://c07302kkmfbdt" path="res://levels/level_transition.tscn" id="3_qvbd0"]
 [ext_resource type="PackedScene" uid="uid://dop8nai6q6q8a" path="res://utility/enemy_counter/enemy_counter.tscn" id="4_0rcwh"]
 [ext_resource type="PackedScene" uid="uid://b044xg5vw6k4r" path="res://enemy/slime/slime.tscn" id="5_cr3p5"]
+[ext_resource type="PackedScene" uid="uid://dsg4lgsxejjtu" path="res://enemy/mini_golem/mini_golem.tscn" id="6_qvbd0"]
 [ext_resource type="PackedScene" uid="uid://cdj8802u3c2ps" path="res://utility/item_dropper/item_dropper.tscn" id="7_7116r"]
 [ext_resource type="Resource" uid="uid://jpwkviu1y060" path="res://item/key_dungeon.tres" id="7_d3w4x"]
+[ext_resource type="PackedScene" uid="uid://qwsj2f3v4t5n" path="res://enemy/goblin/goblin.tscn" id="7_v01vv"]
 
 [node name="03" type="Node2D"]
 script = ExtResource("1_7116r")
@@ -23,13 +25,20 @@ center_player = true
 size = 3
 
 [node name="EnemyCounter" parent="." instance=ExtResource("4_0rcwh")]
-visible = false
 
 [node name="slime" parent="EnemyCounter" instance=ExtResource("5_cr3p5")]
-position = Vector2(240, 88)
+position = Vector2(120, 0)
+
+[node name="mini_golem" parent="EnemyCounter" instance=ExtResource("6_qvbd0")]
+position = Vector2(272, 128)
+
+[node name="goblin" parent="EnemyCounter" instance=ExtResource("7_v01vv")]
+position = Vector2(280, 0)
+
+[node name="goblin2" parent="EnemyCounter" instance=ExtResource("7_v01vv")]
+position = Vector2(136, 104)
 
 [node name="ItemDropper" parent="." instance=ExtResource("7_7116r")]
-visible = false
 position = Vector2(264, 56)
 item_data = ExtResource("7_d3w4x")
 

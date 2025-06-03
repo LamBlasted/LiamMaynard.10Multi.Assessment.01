@@ -22,6 +22,6 @@ script = ExtResource("1_447nn")
 name = "Postion "
 description = "This mysterious liquid seems quite healthy!"
 texture = SubResource("AtlasTexture_dspsv")
-effects = Array[ExtResource("1_ly7pc")]([SubResource("Resource_k5b3p")])
+effects = Array[ExtResource("1_ly7pc")]([SubResource("Resource_k5b3p"), null])
 consume_on_pickup = false
 metadata/_custom_type_script = "uid://bjgwf0c2ms83k"

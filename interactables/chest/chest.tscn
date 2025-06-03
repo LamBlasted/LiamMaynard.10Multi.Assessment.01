@@ -1,9 +1,10 @@
-[gd_scene load_steps=12 format=3 uid="uid://b1eimaf2lymme"]
+[gd_scene load_steps=14 format=3 uid="uid://b1eimaf2lymme"]
 
 [ext_resource type="Script" uid="uid://bc0idmslie6oc" path="res://interactables/chest/chest.gd" id="1_or81j"]
 [ext_resource type="Texture2D" uid="uid://dvfp86i42fs0j" path="res://interactables/chest/treasure-chest.png" id="2_2bxje"]
 [ext_resource type="PackedScene" uid="uid://batfy3rgoda0a" path="res://utility/persistent_data_handler/persistent_data_handler.tscn" id="4_1cndp"]
 [ext_resource type="AudioStream" uid="uid://caq3pyy2ftjaa" path="res://interactables/chest/treasure-open.wav" id="4_rh8pd"]
+[ext_resource type="Script" uid="uid://batb181b7v0te" path="res://interactables/chest/text_interact.gd" id="5_1cndp"]
 
 [sub_resource type="Animation" id="Animation_i1jmr"]
 length = 0.001
@@ -192,6 +193,9 @@ size = Vector2(18.7159, 6.82492)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_rh8pd"]
 size = Vector2(20.7353, 10.7844)
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_i1jmr"]
+size = Vector2(40, 34)
+
 [node name="Chest" type="Node2D"]
 process_mode = 3
 script = ExtResource("1_or81j")
@@ -201,6 +205,15 @@ position = Vector2(0, -5)
 scale = Vector2(0.6, 0.6)
 texture = ExtResource("2_2bxje")
 hframes = 2
+
+[node name="Interact" type="Label" parent="Sprite2D"]
+offset_left = -71.6667
+offset_top = -33.3333
+offset_right = 30.3333
+offset_bottom = -20.3333
+scale = Vector2(1.6, 1.6)
+theme_override_font_sizes/font_size = 16
+text = "Use \"X\" to Interact"
 
 [node name="ItemSprite2D" type="Sprite2D" parent="."]
 position = Vector2(0, -5)
@@ -244,3 +257,12 @@ shape = SubResource("RectangleShape2D_rh8pd")
 debug_color = Color(0.868809, 0.026727, 0.845679, 0.42)
 
 [node name="PersistentDataIsOpen" parent="." instance=ExtResource("4_1cndp")]
+
+[node name="text_interact" type="Area2D" parent="."]
+script = ExtResource("5_1cndp")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="text_interact"]
+shape = SubResource("RectangleShape2D_i1jmr")
+
+[connection signal="body_entered" from="text_interact" to="text_interact" method="_on_body_entered"]
+[connection signal="body_exited" from="text_interact" to="text_interact" method="_on_body_exited"]

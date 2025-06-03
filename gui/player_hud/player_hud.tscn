@@ -200,9 +200,9 @@ anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 offset_left = 110.747
-offset_top = 59.8342
+offset_top = 41.2066
 offset_right = 173.747
-offset_bottom = 59.8342
+offset_bottom = 41.2066
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_font_sizes/font_size = 30
@@ -215,15 +215,15 @@ anchor_left = 0.5
 anchor_right = 0.5
 anchor_bottom = 1.0
 offset_left = 81.0
-offset_top = 88.8053
+offset_top = 70.1777
 offset_right = 198.0
-offset_bottom = 94.8053
+offset_bottom = 76.1777
 grow_horizontal = 2
 grow_vertical = 2
 
 [node name="Continue" type="Button" parent="GameOver/VBoxContainer"]
 layout_mode = 2
-text = "Contune"
+text = "Continue"
 
 [node name="Quit" type="Button" parent="GameOver/VBoxContainer"]
 layout_mode = 2

@@ -16,8 +16,11 @@ func _ready() -> void:
 		if child is HeartGUI:
 			hearts.append( child )
 			child.visible = false
-
 	
+	continue_button.pressed.connect( load_game )
+	quit_button.pressed.connect( quit_game )
+	LevelManager.level_load_started.connect( hide_game_over_screen )
+
 	pass 
 
 
@@ -64,3 +67,17 @@ func hide_game_over_screen() -> void:
 	game_over.visible = false
 	game_over.mouse_filter = Control.MOUSE_FILTER_IGNORE
 	game_over.modulate = Color( 1,1,1,0 )
+
+func load_game() -> void:
+	await fade_to_black()
+	SaveManager.load_game()
+
+func quit_game() -> void:
+	await fade_to_black()
+	LevelManager.load_new_level( "res://title_scene/title_scene.tscn", "", Vector2.ZERO )
+
+func fade_to_black() -> bool:
+	animation_player.play("fade_to_black")
+	await animation_player.animation_finished
+	PlayerManager.player.revive_player()
+	return true
