@@ -3,12 +3,21 @@ extends CanvasLayer
 
 var hearts : Array[ HeartGUI ] = []
 
+@onready var game_over: Control = $GameOver
+@onready var continue_button: Button = $GameOver/VBoxContainer/Continue
+@onready var quit_button: Button = $GameOver/VBoxContainer/Quit
+@onready var animation_player: AnimationPlayer = $GameOver/AnimationPlayer
+
+
+
 
 func _ready() -> void:
 	for child in $Control/HFlowContainer.get_children():
 		if child is HeartGUI:
 			hearts.append( child )
 			child.visible = false
+
+	
 	pass 
 
 
@@ -34,3 +43,24 @@ func update_max_hp( _max_hp: int ) -> void:
 		else: 
 			hearts[i].visible = false
 	pass
+
+
+func show_game_over_screen() -> void:
+	game_over.visible = true
+	game_over.mouse_filter = Control.MOUSE_FILTER_STOP
+	
+	var can_continue : bool = SaveManager.get_save_file() != null
+	continue_button.visible = can_continue
+	
+	animation_player.play("show_game_over")
+	await animation_player.animation_finished
+	
+	if can_continue == true:
+		continue_button.grab_focus()
+	else:
+		quit_button.grab_focus()
+
+func hide_game_over_screen() -> void:
+	game_over.visible = false
+	game_over.mouse_filter = Control.MOUSE_FILTER_IGNORE
+	game_over.modulate = Color( 1,1,1,0 )

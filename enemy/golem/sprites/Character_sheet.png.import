@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://cfvvnfbc5vo72"
-path="res://.godot/imported/Character_sheet.png-d1da9683fc4110685489319a4a1fa685.ctex"
+path="res://.godot/imported/Character_sheet.png-7f8fa25ca31605d56ffdc68a71b80549.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://enemy/00scripts/golem/sprites/Character_sheet.png"
-dest_files=["res://.godot/imported/Character_sheet.png-d1da9683fc4110685489319a4a1fa685.ctex"]
+source_file="res://enemy/golem/sprites/Character_sheet.png"
+dest_files=["res://.godot/imported/Character_sheet.png-7f8fa25ca31605d56ffdc68a71b80549.ctex"]
 
 [params]
 

@@ -29,6 +29,10 @@ func Enter() -> void:
 	enemy.UpdateAnimation( anim_name )
 	if attack_area: 
 		attack_area.monitoring = true
+	if vission_area and vission_area.get_overlapping_bodies().has(PlayerManager.player):
+		_can_see_player = true 
+	else:
+		_can_see_player = false
 	pass
 
 # What happens when the player exists this State?

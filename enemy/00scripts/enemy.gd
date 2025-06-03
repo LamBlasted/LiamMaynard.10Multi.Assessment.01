@@ -22,7 +22,7 @@ func _ready():
 	state_machine.initialize( self )
 	player = PlayerManager.player
 	hit_box.damaged.connect( _take_damage )
-	pass 
+
 
 func _process(_delta: float):
 	pass

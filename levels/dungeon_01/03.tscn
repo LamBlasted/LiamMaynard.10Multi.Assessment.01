@@ -23,11 +23,13 @@ center_player = true
 size = 3
 
 [node name="EnemyCounter" parent="." instance=ExtResource("4_0rcwh")]
+visible = false
 
 [node name="slime" parent="EnemyCounter" instance=ExtResource("5_cr3p5")]
 position = Vector2(240, 88)
 
 [node name="ItemDropper" parent="." instance=ExtResource("7_7116r")]
+visible = false
 position = Vector2(264, 56)
 item_data = ExtResource("7_d3w4x")
 
